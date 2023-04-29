@@ -1,0 +1,15 @@
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\bin\Debug\net6.0\TrainBooking.Repositories.deps.json
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\bin\Debug\net6.0\TrainBooking.Repositories.dll
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\bin\Debug\net6.0\TrainBooking.Repositories.pdb
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\bin\Debug\net6.0\TrainBooking.Models.dll
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\bin\Debug\net6.0\TrainBooking.Models.pdb
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\obj\Debug\net6.0\TrainBooking.Repositories.csproj.AssemblyReference.cache
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\obj\Debug\net6.0\TrainBooking.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\obj\Debug\net6.0\TrainBooking.Repositories.AssemblyInfoInputs.cache
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\obj\Debug\net6.0\TrainBooking.Repositories.AssemblyInfo.cs
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\obj\Debug\net6.0\TrainBooking.Repositories.csproj.CoreCompileInputs.cache
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\obj\Debug\net6.0\TrainBooking.Repositories.csproj.CopyComplete
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\obj\Debug\net6.0\TrainBooking.Repositories.dll
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\obj\Debug\net6.0\refint\TrainBooking.Repositories.dll
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\obj\Debug\net6.0\TrainBooking.Repositories.pdb
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\obj\Debug\net6.0\ref\TrainBooking.Repositories.dll

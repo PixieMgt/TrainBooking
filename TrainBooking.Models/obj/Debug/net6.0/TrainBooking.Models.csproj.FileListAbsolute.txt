@@ -1,0 +1,12 @@
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Models\bin\Debug\net6.0\TrainBooking.Models.deps.json
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Models\bin\Debug\net6.0\TrainBooking.Models.dll
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Models\bin\Debug\net6.0\TrainBooking.Models.pdb
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Models\obj\Debug\net6.0\TrainBooking.Models.csproj.AssemblyReference.cache
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Models\obj\Debug\net6.0\TrainBooking.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Models\obj\Debug\net6.0\TrainBooking.Models.AssemblyInfoInputs.cache
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Models\obj\Debug\net6.0\TrainBooking.Models.AssemblyInfo.cs
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Models\obj\Debug\net6.0\TrainBooking.Models.csproj.CoreCompileInputs.cache
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Models\obj\Debug\net6.0\TrainBooking.Models.dll
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Models\obj\Debug\net6.0\refint\TrainBooking.Models.dll
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Models\obj\Debug\net6.0\TrainBooking.Models.pdb
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Models\obj\Debug\net6.0\ref\TrainBooking.Models.dll

@@ -1,0 +1,113 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "TrainBooking.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TrainBooking.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TrainBooking.Models.dll": {}
+        }
+      },
+      "TrainBooking.Repositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "TrainBooking.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TrainBooking.Repositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TrainBooking.Repositories.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TrainBooking.Models/1.0.0": {
+      "type": "project",
+      "path": "../TrainBooking.Models/TrainBooking.Models.csproj",
+      "msbuildProject": "../TrainBooking.Models/TrainBooking.Models.csproj"
+    },
+    "TrainBooking.Repositories/1.0.0": {
+      "type": "project",
+      "path": "../TrainBooking.Repositories/TrainBooking.Repositories.csproj",
+      "msbuildProject": "../TrainBooking.Repositories/TrainBooking.Repositories.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "TrainBooking.Models >= 1.0.0",
+      "TrainBooking.Repositories >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\pixie\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj",
+      "projectName": "TrainBooking.Services",
+      "projectPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj",
+      "packagesPath": "C:\\Users\\pixie\\.nuget\\packages\\",
+      "outputPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Services\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\pixie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj": {
+              "projectPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj"
+            },
+            "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Repositories\\TrainBooking.Repositories.csproj": {
+              "projectPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Repositories\\TrainBooking.Repositories.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "TrainBooking.Repositories/1.0.0": {
+        "dependencies": {
+          "TrainBooking.Models": "1.0.0"
+        },
+        "runtime": {
+          "TrainBooking.Repositories.dll": {}
+        }
+      },
+      "TrainBooking.Models/1.0.0": {
+        "runtime": {
+          "TrainBooking.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TrainBooking.Repositories/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TrainBooking.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
