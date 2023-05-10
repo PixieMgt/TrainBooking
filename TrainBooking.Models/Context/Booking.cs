@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace TrainBooking.Models.Context
 {
-    internal class Booking
+    public class Booking
     {
+        public int Id { get; set; }
+        //public Account Account { get; set; }
+        public ICollection<Ticket> Tickets { get; set; }
     }
 }

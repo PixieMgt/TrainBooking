@@ -15,3 +15,20 @@ C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\Tr
 C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Services\obj\Debug\net6.0\refint\TrainBooking.Services.dll
 C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Services\obj\Debug\net6.0\TrainBooking.Services.pdb
 C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Services\obj\Debug\net6.0\ref\TrainBooking.Services.dll
+C:\Github\TrainBooking\TrainBooking.Services\bin\Debug\net6.0\TrainBooking.Services.deps.json
+C:\Github\TrainBooking\TrainBooking.Services\bin\Debug\net6.0\TrainBooking.Services.dll
+C:\Github\TrainBooking\TrainBooking.Services\bin\Debug\net6.0\TrainBooking.Services.pdb
+C:\Github\TrainBooking\TrainBooking.Services\bin\Debug\net6.0\TrainBooking.Models.dll
+C:\Github\TrainBooking\TrainBooking.Services\bin\Debug\net6.0\TrainBooking.Repositories.dll
+C:\Github\TrainBooking\TrainBooking.Services\bin\Debug\net6.0\TrainBooking.Models.pdb
+C:\Github\TrainBooking\TrainBooking.Services\bin\Debug\net6.0\TrainBooking.Repositories.pdb
+C:\Github\TrainBooking\TrainBooking.Services\obj\Debug\net6.0\TrainBooking.Services.csproj.AssemblyReference.cache
+C:\Github\TrainBooking\TrainBooking.Services\obj\Debug\net6.0\TrainBooking.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Github\TrainBooking\TrainBooking.Services\obj\Debug\net6.0\TrainBooking.Services.AssemblyInfoInputs.cache
+C:\Github\TrainBooking\TrainBooking.Services\obj\Debug\net6.0\TrainBooking.Services.AssemblyInfo.cs
+C:\Github\TrainBooking\TrainBooking.Services\obj\Debug\net6.0\TrainBooking.Services.csproj.CoreCompileInputs.cache
+C:\Github\TrainBooking\TrainBooking.Services\obj\Debug\net6.0\TrainBooking.Services.csproj.CopyComplete
+C:\Github\TrainBooking\TrainBooking.Services\obj\Debug\net6.0\TrainBooking.Services.dll
+C:\Github\TrainBooking\TrainBooking.Services\obj\Debug\net6.0\refint\TrainBooking.Services.dll
+C:\Github\TrainBooking\TrainBooking.Services\obj\Debug\net6.0\TrainBooking.Services.pdb
+C:\Github\TrainBooking\TrainBooking.Services\obj\Debug\net6.0\ref\TrainBooking.Services.dll
