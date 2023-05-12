@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "LwcQcTzPNFNDPkHcXdfJKFo6Jf+tu4t+RQOhG+KxurpSWssa/7JvNgl+Gy52Fu8G1sOEDzNnmDRu+UOuxskT2A==",
-  "success": true,
+  "dgSpecHash": "SwSM9wS/Fb69TIitCR4rGEUmqZG7fHe4L9MzOSuoRojwNzChrwgLLDI2w9HsYRL5FrW8xmz9UZQuAUDxbt5LtQ==",
+  "success": false,
   "projectFilePath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking\\TrainBooking.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pixie\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
@@ -186,5 +186,24 @@
     "C:\\Users\\pixie\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\pixie\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 6.0.16 to 6.0.15. Reference the package directly from the project to select a different version. \r\n TrainBooking -> TrainBooking.Models -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.16) \r\n TrainBooking -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.15)",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 6.0.16 to 6.0.15. Reference the package directly from the project to select a different version. \r\n TrainBooking -> TrainBooking.Services -> TrainBooking.Repositories -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.16) \r\n TrainBooking -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.15)",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

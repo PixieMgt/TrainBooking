@@ -3702,6 +3702,9 @@
       "TrainBooking.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16"
+        },
         "compile": {
           "bin/placeholder/TrainBooking.Models.dll": {}
         },
@@ -3713,6 +3716,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16",
           "TrainBooking.Models": "1.0.0"
         },
         "compile": {
@@ -10607,5 +10611,25 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 6.0.16 to 6.0.15. Reference the package directly from the project to select a different version. \r\n TrainBooking -> TrainBooking.Models -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.16) \r\n TrainBooking -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.15)",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 6.0.16 to 6.0.15. Reference the package directly from the project to select a different version. \r\n TrainBooking -> TrainBooking.Services -> TrainBooking.Repositories -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.16) \r\n TrainBooking -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.15)",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
