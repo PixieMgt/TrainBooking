@@ -1,18 +1,23 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
-using TrainBooking.Models.Context;
+using TrainBooking.Models.Data;
+using TrainBooking.Models.Entities;
+using TrainBooking.Repositories;
+using TrainBooking.Repositories.Interfaces;
+using TrainBooking.Services;
+using TrainBooking.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<TrainBookingDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    .AddEntityFrameworkStores<TrainBookingDbContext>();
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddRazorPages();
@@ -23,6 +28,13 @@ builder.Services.AddLocalization(options => options.ResourcesPath = "Resources")
 builder.Services.AddControllersWithViews()
     .AddViewLocalization(LanguageViewLocationExpanderFormat.SubFolder) // translation on views
     .AddDataAnnotationsLocalization(); // translation on viewmodels
+
+// Add Automapper
+builder.Services.AddAutoMapper(typeof(Program));
+
+//----> Dependency Injection
+builder.Services.AddTransient<IService<Station>, StationService>();
+builder.Services.AddTransient<IDAO<Station>, StationDAO>();
 
 var supportedCultures = new[] { "en", "nl" };
 

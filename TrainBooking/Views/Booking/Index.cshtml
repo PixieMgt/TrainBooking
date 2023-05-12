@@ -14,29 +14,15 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="departureStation" class="control-label"></label>
-                <select asp-for="departureStation" class="form-control">
+                <select asp-for="departureStation" class="form-control" asp-items="Model.StationList">
                     <option></option>
-                    <option>@Localizer["Brussels"]</option>
-                    <option>@Localizer["London"]</option>
-                    <option>@Localizer["Paris"]</option>
-                    <option>@Localizer["Amsterdam"]</option>
-                    <option>@Localizer["Berlin"]</option>
-                    <option>@Localizer["Rome"]</option>
-                    <option>@Localizer["Moscow"]</option>
                 </select>
                 <span asp-validation-for="departureStation" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="arrivalStation" class="control-label"></label>
-                <select asp-for="arrivalStation" class="form-control">
+                <select asp-for="arrivalStation" class="form-control" asp-items="Model.StationList">
                     <option></option>
-                    <option>@Localizer["Brussels"]</option>
-                    <option>@Localizer["London"]</option>
-                    <option>@Localizer["Paris"]</option>
-                    <option>@Localizer["Amsterdam"]</option>
-                    <option>@Localizer["Berlin"]</option>
-                    <option>@Localizer["Rome"]</option>
-                    <option>@Localizer["Moscow"]</option>
                 </select>
                 <span asp-validation-for="arrivalStation" class="text-danger"></span>
             </div>

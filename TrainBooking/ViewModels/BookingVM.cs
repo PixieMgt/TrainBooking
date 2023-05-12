@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 
 namespace TrainBooking.ViewModels
 {
@@ -19,5 +20,7 @@ namespace TrainBooking.ViewModels
         [Display(Name = "Time")]
         [Required(ErrorMessage = "Please enter a departure time")]
         public TimeOnly departureTime { get; set; }
+
+        public List<SelectListItem>? StationList { get; set; }
     }
 }

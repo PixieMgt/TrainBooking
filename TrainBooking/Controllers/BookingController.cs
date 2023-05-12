@@ -1,12 +1,32 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using TrainBooking.Models.Entities;
+using TrainBooking.Services.Interfaces;
+using TrainBooking.ViewModels;
 
 namespace TrainBooking.Controllers
 {
     public class BookingController : Controller
     {
-        public IActionResult Index()
+        private IService<Station> _stationService;
+
+        private readonly IMapper _mapper;
+        public BookingController(IMapper mapper, IService<Station> stationService)
         {
-            return View();
+            _mapper = mapper;
+            _stationService = stationService;
+        }
+        public async Task<IActionResult> Index()
+        {
+            var stationList = await _stationService.GetAll();
+            var booking = new BookingVM();
+            booking.StationList = stationList != null ? stationList.Select(x => new SelectListItem
+            {
+                Text = x.City,
+                Value = x.Id.ToString(),
+            }).ToList() : null;
+            return View(booking);
         }
     }
 }
