@@ -67,11 +67,19 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.EntityFrameworkCore/6.0.16": {
         "type": "package",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Abstractions": "6.0.16",
           "Microsoft.EntityFrameworkCore.Analyzers": "6.0.16",
+=======
+      "Microsoft.EntityFrameworkCore/6.0.15": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.15",
+          "Microsoft.EntityFrameworkCore.Analyzers": "6.0.15",
+>>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
           "Microsoft.Extensions.Caching.Memory": "6.0.1",
           "Microsoft.Extensions.DependencyInjection": "6.0.1",
           "Microsoft.Extensions.Logging": "6.0.0",
@@ -92,7 +100,11 @@
           "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props": {}
         }
       },
+<<<<<<< HEAD
       "Microsoft.EntityFrameworkCore.Abstractions/6.0.16": {
+=======
+      "Microsoft.EntityFrameworkCore.Abstractions/6.0.15": {
+>>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
@@ -105,7 +117,11 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.EntityFrameworkCore.Analyzers/6.0.16": {
+=======
+      "Microsoft.EntityFrameworkCore.Analyzers/6.0.15": {
+>>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -114,10 +130,17 @@
           "lib/netstandard2.0/_._": {}
         }
       },
+<<<<<<< HEAD
       "Microsoft.EntityFrameworkCore.Relational/6.0.16": {
         "type": "package",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.16",
+=======
+      "Microsoft.EntityFrameworkCore.Relational/6.0.15": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.15",
+>>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
         },
         "compile": {
@@ -131,11 +154,19 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.EntityFrameworkCore.SqlServer/6.0.16": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.SqlClient": "2.1.4",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.16"
+=======
+      "Microsoft.EntityFrameworkCore.SqlServer/6.0.15": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Data.SqlClient": "2.1.4",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.15"
+>>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
         },
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
@@ -742,7 +773,11 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+<<<<<<< HEAD
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16"
+=======
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.15"
+>>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
         },
         "compile": {
           "bin/placeholder/TrainBooking.Models.dll": {}
@@ -755,7 +790,11 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+<<<<<<< HEAD
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16",
+=======
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.15",
+>>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
           "TrainBooking.Models": "1.0.0"
         },
         "compile": {
@@ -923,10 +962,17 @@
         "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.EntityFrameworkCore/6.0.16": {
       "sha512": "Phfd0D0ew5VHGtM/j7o5HYapbt4R7d9Tkm4z+L4nmkhcEzWZjeuBCUBTOgJI7U4gI916QHliDCcp53FF7NBHIA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore/6.0.16",
+=======
+    "Microsoft.EntityFrameworkCore/6.0.15": {
+      "sha512": "o51dv+X1Fv1/oPCWtCED4tTov4aBWD59ebkY5BW5K/8hwu+X+AfWpN1/bCBuS/3OPW24RuZmGfigByRMlG/fIA==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore/6.0.15",
+>>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -934,6 +980,7 @@
         "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.xml",
+<<<<<<< HEAD
         "microsoft.entityframeworkcore.6.0.16.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
@@ -942,12 +989,23 @@
       "sha512": "ubRazZ/5BbOI4B11HcNAr0v4qE9MDcAAZtEFPqkGrnz4ClciA8qsM1Rd8IB25EoxfLnOv/Lnz7aW+/3G+D1MCg==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.abstractions/6.0.16",
+=======
+        "microsoft.entityframeworkcore.6.0.15.nupkg.sha512",
+        "microsoft.entityframeworkcore.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Abstractions/6.0.15": {
+      "sha512": "seE5q7/0R1LmWiQcd5pZYzlY8WdVojv2tk+5o0p4HrEvliOysomjIOYVEEHJnK9NwXqHBcZra4b+RwzgWYdbzA==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.abstractions/6.0.15",
+>>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
+<<<<<<< HEAD
         "microsoft.entityframeworkcore.abstractions.6.0.16.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
@@ -956,12 +1014,23 @@
       "sha512": "gN2yqqz2R6jj80SUTc036cPPM6xv3e/T1qpQI8ZfWJG3hXjcISI93uZtnyLVpn1712SklQR1WMIZ/bGYUurjcA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.analyzers/6.0.16",
+=======
+        "microsoft.entityframeworkcore.abstractions.6.0.15.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Analyzers/6.0.15": {
+      "sha512": "0ZKFq5irkVVyPJmQDorRsWxXy85wKm+UPO8J6pf2h1ggGl1CkhlXa+bteM8NBo++Cfylv8cBSo8ZfQZHV57fIg==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.analyzers/6.0.15",
+>>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "lib/netstandard2.0/_._",
+<<<<<<< HEAD
         "microsoft.entityframeworkcore.analyzers.6.0.16.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
@@ -970,12 +1039,23 @@
       "sha512": "6kIM14JzDy5h8C/D3wd8TOHF+btIWjb/RuzOTI3WK01F7m7uGP+JVM7sEveEfeE/xY/Qvlo+kSE3WIJmasn+ww==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.relational/6.0.16",
+=======
+        "microsoft.entityframeworkcore.analyzers.6.0.15.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Relational/6.0.15": {
+      "sha512": "ouk4es/CzwxjXl33mb2hJzitluc2CD9rujZVBaUy3w3fn8qMjlktMOhf5mIAS7e3sreBikOBwaxp9/y/N/O2NQ==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.relational/6.0.15",
+>>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.xml",
+<<<<<<< HEAD
         "microsoft.entityframeworkcore.relational.6.0.16.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
@@ -984,13 +1064,27 @@
       "sha512": "xqJXDqjq8ArJzwUZjSaBsbSFZIhsrTf1oLxoOWFN+p9itCeFJvJ0AZkbGuzKt6Vq/ZJ4YkkdIrCj451RAwM5Mw==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.sqlserver/6.0.16",
+=======
+        "microsoft.entityframeworkcore.relational.6.0.15.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.SqlServer/6.0.15": {
+      "sha512": "sNptOQ/eYXoj+IR9nysdD0jzF8mtYbrxYmhZ6s2OXeezGIoLs+gHreBWBw7tfpcC/Ezl/NUceCRbZ70XUtPA3g==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.sqlserver/6.0.15",
+>>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
+<<<<<<< HEAD
         "microsoft.entityframeworkcore.sqlserver.6.0.16.nupkg.sha512",
+=======
+        "microsoft.entityframeworkcore.sqlserver.6.0.15.nupkg.sha512",
+>>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
@@ -1948,19 +2042,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pixie\\.nuget\\packages\\": {}
+    "C:\\Users\\vanha\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj",
+      "projectUniqueName": "C:\\Github\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj",
       "projectName": "TrainBooking.Services",
-      "projectPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj",
-      "packagesPath": "C:\\Users\\pixie\\.nuget\\packages\\",
-      "outputPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Services\\obj\\",
+      "projectPath": "C:\\Github\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj",
+      "packagesPath": "C:\\Users\\vanha\\.nuget\\packages\\",
+      "outputPath": "C:\\Github\\TrainBooking\\TrainBooking.Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\pixie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vanha\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1974,11 +2068,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj": {
-              "projectPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj"
+            "C:\\Github\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj": {
+              "projectPath": "C:\\Github\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj"
             },
-            "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Repositories\\TrainBooking.Repositories.csproj": {
-              "projectPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Repositories\\TrainBooking.Repositories.csproj"
+            "C:\\Github\\TrainBooking\\TrainBooking.Repositories\\TrainBooking.Repositories.csproj": {
+              "projectPath": "C:\\Github\\TrainBooking\\TrainBooking.Repositories\\TrainBooking.Repositories.csproj"
             }
           }
         }
@@ -2008,7 +2102,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

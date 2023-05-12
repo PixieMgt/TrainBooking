@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrainBooking.Models.Context
 {
-    internal class Account
+    public class Account
     {
     }
 }

@@ -8,5 +8,9 @@ namespace TrainBooking.Models.Context
 {
     public class Train
     {
+        public int Id { get; set; }
+        public int EconomyClassCapacity { get; set; }
+        public int BusinessClassCapacity { get; set; }
+        public ICollection<Section> Sections { get; set; }
     }
 }

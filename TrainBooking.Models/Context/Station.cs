@@ -8,6 +8,8 @@ namespace TrainBooking.Models.Context
 {
     public class Station
     {
-        
+        public int Id { get; set; }
+        public string City { get; set; }
+
     }
 }

@@ -3703,7 +3703,11 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+<<<<<<< HEAD
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16"
+=======
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.15"
+>>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
         },
         "compile": {
           "bin/placeholder/TrainBooking.Models.dll": {}
@@ -3716,7 +3720,11 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+<<<<<<< HEAD
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16",
+=======
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.15",
+>>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
           "TrainBooking.Models": "1.0.0"
         },
         "compile": {
@@ -10509,6 +10517,7 @@
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.14",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.15",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.15",
+      "Microsoft.EntityFrameworkCore.Design >= 6.0.15",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.15",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.15",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.13",
@@ -10517,19 +10526,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pixie\\.nuget\\packages\\": {}
+    "C:\\Users\\vanha\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking\\TrainBooking.csproj",
+      "projectUniqueName": "C:\\Github\\TrainBooking\\TrainBooking\\TrainBooking.csproj",
       "projectName": "TrainBooking",
-      "projectPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking\\TrainBooking.csproj",
-      "packagesPath": "C:\\Users\\pixie\\.nuget\\packages\\",
-      "outputPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking\\obj\\",
+      "projectPath": "C:\\Github\\TrainBooking\\TrainBooking\\TrainBooking.csproj",
+      "packagesPath": "C:\\Users\\vanha\\.nuget\\packages\\",
+      "outputPath": "C:\\Github\\TrainBooking\\TrainBooking\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\pixie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vanha\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10543,11 +10552,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj": {
-              "projectPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj"
+            "C:\\Github\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj": {
+              "projectPath": "C:\\Github\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj"
             },
-            "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj": {
-              "projectPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj"
+            "C:\\Github\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj": {
+              "projectPath": "C:\\Github\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj"
             }
           }
         }
@@ -10571,6 +10580,12 @@
             "version": "[6.0.15, )"
           },
           "Microsoft.AspNetCore.Identity.UI": {
+            "target": "Package",
+            "version": "[6.0.15, )"
+          },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.15, )"
           },
@@ -10608,7 +10623,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   },

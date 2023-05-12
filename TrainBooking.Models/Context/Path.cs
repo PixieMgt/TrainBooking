@@ -9,5 +9,6 @@ namespace TrainBooking.Models.Context
     public class Path
     {
         
+
     }
 }

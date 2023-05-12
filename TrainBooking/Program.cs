@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
-using TrainBooking.Data;
+using TrainBooking.Models.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
