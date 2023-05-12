@@ -74,17 +74,10 @@
           }
         }
       },
-<<<<<<< HEAD
-      "Microsoft.EntityFrameworkCore/6.0.16": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.16",
-          "Microsoft.EntityFrameworkCore.Analyzers": "6.0.16",
-=======
       "Microsoft.EntityFrameworkCore/6.0.15": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Abstractions": "6.0.15",
           "Microsoft.EntityFrameworkCore.Analyzers": "6.0.15",
->>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
           "Microsoft.Extensions.Caching.Memory": "6.0.1",
           "Microsoft.Extensions.DependencyInjection": "6.0.1",
           "Microsoft.Extensions.Logging": "6.0.0",
@@ -93,25 +86,6 @@
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {
-<<<<<<< HEAD
-            "assemblyVersion": "6.0.16.0",
-            "fileVersion": "6.0.1623.17009"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Abstractions/6.0.16": {
-        "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "assemblyVersion": "6.0.16.0",
-            "fileVersion": "6.0.1623.17009"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Analyzers/6.0.16": {},
-      "Microsoft.EntityFrameworkCore.Relational/6.0.16": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "6.0.16",
-=======
             "assemblyVersion": "6.0.15.0",
             "fileVersion": "6.0.1523.11510"
           }
@@ -129,27 +103,10 @@
       "Microsoft.EntityFrameworkCore.Relational/6.0.15": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.15",
->>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-<<<<<<< HEAD
-            "assemblyVersion": "6.0.16.0",
-            "fileVersion": "6.0.1623.17009"
-          }
-        }
-      },
-      "Microsoft.EntityFrameworkCore.SqlServer/6.0.16": {
-        "dependencies": {
-          "Microsoft.Data.SqlClient": "2.1.4",
-          "Microsoft.EntityFrameworkCore.Relational": "6.0.16"
-        },
-        "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
-            "assemblyVersion": "6.0.16.0",
-            "fileVersion": "6.0.1623.17009"
-=======
             "assemblyVersion": "6.0.15.0",
             "fileVersion": "6.0.1523.11510"
           }
@@ -164,7 +121,6 @@
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
             "assemblyVersion": "6.0.15.0",
             "fileVersion": "6.0.1523.11510"
->>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
           }
         }
       },
@@ -509,11 +465,7 @@
       },
       "TrainBooking.Models/1.0.0": {
         "dependencies": {
-<<<<<<< HEAD
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16"
-=======
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.15"
->>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
         },
         "runtime": {
           "TrainBooking.Models.dll": {}
@@ -521,11 +473,7 @@
       },
       "TrainBooking.Repositories/1.0.0": {
         "dependencies": {
-<<<<<<< HEAD
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16",
-=======
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.15",
->>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
           "TrainBooking.Models": "1.0.0"
         },
         "runtime": {
@@ -561,42 +509,6 @@
       "path": "microsoft.data.sqlclient.sni.runtime/2.1.1",
       "hashPath": "microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512"
     },
-<<<<<<< HEAD
-    "Microsoft.EntityFrameworkCore/6.0.16": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Phfd0D0ew5VHGtM/j7o5HYapbt4R7d9Tkm4z+L4nmkhcEzWZjeuBCUBTOgJI7U4gI916QHliDCcp53FF7NBHIA==",
-      "path": "microsoft.entityframeworkcore/6.0.16",
-      "hashPath": "microsoft.entityframeworkcore.6.0.16.nupkg.sha512"
-    },
-    "Microsoft.EntityFrameworkCore.Abstractions/6.0.16": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ubRazZ/5BbOI4B11HcNAr0v4qE9MDcAAZtEFPqkGrnz4ClciA8qsM1Rd8IB25EoxfLnOv/Lnz7aW+/3G+D1MCg==",
-      "path": "microsoft.entityframeworkcore.abstractions/6.0.16",
-      "hashPath": "microsoft.entityframeworkcore.abstractions.6.0.16.nupkg.sha512"
-    },
-    "Microsoft.EntityFrameworkCore.Analyzers/6.0.16": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-gN2yqqz2R6jj80SUTc036cPPM6xv3e/T1qpQI8ZfWJG3hXjcISI93uZtnyLVpn1712SklQR1WMIZ/bGYUurjcA==",
-      "path": "microsoft.entityframeworkcore.analyzers/6.0.16",
-      "hashPath": "microsoft.entityframeworkcore.analyzers.6.0.16.nupkg.sha512"
-    },
-    "Microsoft.EntityFrameworkCore.Relational/6.0.16": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6kIM14JzDy5h8C/D3wd8TOHF+btIWjb/RuzOTI3WK01F7m7uGP+JVM7sEveEfeE/xY/Qvlo+kSE3WIJmasn+ww==",
-      "path": "microsoft.entityframeworkcore.relational/6.0.16",
-      "hashPath": "microsoft.entityframeworkcore.relational.6.0.16.nupkg.sha512"
-    },
-    "Microsoft.EntityFrameworkCore.SqlServer/6.0.16": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-xqJXDqjq8ArJzwUZjSaBsbSFZIhsrTf1oLxoOWFN+p9itCeFJvJ0AZkbGuzKt6Vq/ZJ4YkkdIrCj451RAwM5Mw==",
-      "path": "microsoft.entityframeworkcore.sqlserver/6.0.16",
-      "hashPath": "microsoft.entityframeworkcore.sqlserver.6.0.16.nupkg.sha512"
-=======
     "Microsoft.EntityFrameworkCore/6.0.15": {
       "type": "package",
       "serviceable": true,
@@ -631,7 +543,6 @@
       "sha512": "sha512-sNptOQ/eYXoj+IR9nysdD0jzF8mtYbrxYmhZ6s2OXeezGIoLs+gHreBWBw7tfpcC/Ezl/NUceCRbZ70XUtPA3g==",
       "path": "microsoft.entityframeworkcore.sqlserver/6.0.15",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.6.0.15.nupkg.sha512"
->>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
     },
     "Microsoft.Extensions.Caching.Abstractions/6.0.0": {
       "type": "package",

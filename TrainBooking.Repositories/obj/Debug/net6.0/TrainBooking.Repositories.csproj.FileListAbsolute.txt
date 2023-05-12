@@ -30,3 +30,5 @@ C:\Github\TrainBooking\TrainBooking.Repositories\obj\Debug\net6.0\refint\TrainBo
 C:\Github\TrainBooking\TrainBooking.Repositories\obj\Debug\net6.0\TrainBooking.Repositories.pdb
 C:\Github\TrainBooking\TrainBooking.Repositories\obj\Debug\net6.0\TrainBooking.Repositories.genruntimeconfig.cache
 C:\Github\TrainBooking\TrainBooking.Repositories\obj\Debug\net6.0\ref\TrainBooking.Repositories.dll
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\bin\Debug\net6.0\TrainBooking.Repositories.runtimeconfig.json
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking.Repositories\obj\Debug\net6.0\TrainBooking.Repositories.genruntimeconfig.cache

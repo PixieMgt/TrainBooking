@@ -3703,11 +3703,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-<<<<<<< HEAD
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16"
-=======
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.15"
->>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
         },
         "compile": {
           "bin/placeholder/TrainBooking.Models.dll": {}
@@ -3720,11 +3716,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-<<<<<<< HEAD
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16",
-=======
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.15",
->>>>>>> 81acdb84e5367bcc087282d169ef33a2794bae77
           "TrainBooking.Models": "1.0.0"
         },
         "compile": {
@@ -10526,19 +10518,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vanha\\.nuget\\packages\\": {}
+    "C:\\Users\\pixie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Github\\TrainBooking\\TrainBooking\\TrainBooking.csproj",
+      "projectUniqueName": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking\\TrainBooking.csproj",
       "projectName": "TrainBooking",
-      "projectPath": "C:\\Github\\TrainBooking\\TrainBooking\\TrainBooking.csproj",
-      "packagesPath": "C:\\Users\\vanha\\.nuget\\packages\\",
-      "outputPath": "C:\\Github\\TrainBooking\\TrainBooking\\obj\\",
+      "projectPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking\\TrainBooking.csproj",
+      "packagesPath": "C:\\Users\\pixie\\.nuget\\packages\\",
+      "outputPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\vanha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pixie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10552,11 +10544,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Github\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj": {
-              "projectPath": "C:\\Github\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj"
+            "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj": {
+              "projectPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj"
             },
-            "C:\\Github\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj": {
-              "projectPath": "C:\\Github\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj"
+            "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj": {
+              "projectPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj"
             }
           }
         }
@@ -10623,28 +10615,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   },
   "logs": [
     {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 6.0.16 to 6.0.15. Reference the package directly from the project to select a different version. \r\n TrainBooking -> TrainBooking.Models -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.16) \r\n TrainBooking -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.15)",
-      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 6.0.16 to 6.0.15. Reference the package directly from the project to select a different version. \r\n TrainBooking -> TrainBooking.Services -> TrainBooking.Repositories -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.16) \r\n TrainBooking -> Microsoft.EntityFrameworkCore.SqlServer (>= 6.0.15)",
-      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
-      "targetGraphs": [
-        "net6.0"
-      ]
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
 }
