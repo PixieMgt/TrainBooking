@@ -10,6 +10,8 @@ namespace TrainBooking.Models.Context
     {
         public int Id { get; set; }
         public string City { get; set; }
+        public ICollection<Section> Departures { get; set; }
+        public ICollection<Section> Destinations { get; set; }
 
     }
 }

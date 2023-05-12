@@ -43,20 +43,19 @@ namespace TrainBooking.Models.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("DepartureStationId")
+                    b.Property<int?>("DepartureStationId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DepartureTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DestinationStationId")
+                    b.Property<int?>("DestinationStationId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DestinationTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<int?>("TicketId")
-                        .HasColumnType("int");
 
                     b.Property<int>("TrainId")
                         .HasColumnType("int");
@@ -67,11 +66,24 @@ namespace TrainBooking.Models.Migrations
 
                     b.HasIndex("DestinationStationId");
 
-                    b.HasIndex("TicketId");
-
                     b.HasIndex("TrainId");
 
                     b.ToTable("Sections");
+                });
+
+            modelBuilder.Entity("TrainBooking.Models.Context.SectionTicket", b =>
+                {
+                    b.Property<int>("SectionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TicketId")
+                        .HasColumnType("int");
+
+                    b.HasKey("SectionId", "TicketId");
+
+                    b.HasIndex("TicketId");
+
+                    b.ToTable("SectionTickets");
                 });
 
             modelBuilder.Entity("TrainBooking.Models.Context.Station", b =>
@@ -137,20 +149,16 @@ namespace TrainBooking.Models.Migrations
             modelBuilder.Entity("TrainBooking.Models.Context.Section", b =>
                 {
                     b.HasOne("TrainBooking.Models.Context.Station", "DepartureStation")
-                        .WithMany()
+                        .WithMany("Departures")
                         .HasForeignKey("DepartureStationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_Sections_Stations_DepartureStationId");
 
                     b.HasOne("TrainBooking.Models.Context.Station", "DestinationStation")
-                        .WithMany()
+                        .WithMany("Destinations")
                         .HasForeignKey("DestinationStationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("TrainBooking.Models.Context.Ticket", null)
-                        .WithMany("Sections")
-                        .HasForeignKey("TicketId");
+                        .IsRequired()
+                        .HasConstraintName("FK_Sections_Stations_DestinationStationId");
 
                     b.HasOne("TrainBooking.Models.Context.Train", "Train")
                         .WithMany("Sections")
@@ -163,6 +171,25 @@ namespace TrainBooking.Models.Migrations
                     b.Navigation("DestinationStation");
 
                     b.Navigation("Train");
+                });
+
+            modelBuilder.Entity("TrainBooking.Models.Context.SectionTicket", b =>
+                {
+                    b.HasOne("TrainBooking.Models.Context.Section", "Section")
+                        .WithMany("SectionTickets")
+                        .HasForeignKey("SectionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TrainBooking.Models.Context.Ticket", "Ticket")
+                        .WithMany("SectionTickets")
+                        .HasForeignKey("TicketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Section");
+
+                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("TrainBooking.Models.Context.Ticket", b =>
@@ -181,9 +208,21 @@ namespace TrainBooking.Models.Migrations
                     b.Navigation("Tickets");
                 });
 
+            modelBuilder.Entity("TrainBooking.Models.Context.Section", b =>
+                {
+                    b.Navigation("SectionTickets");
+                });
+
+            modelBuilder.Entity("TrainBooking.Models.Context.Station", b =>
+                {
+                    b.Navigation("Departures");
+
+                    b.Navigation("Destinations");
+                });
+
             modelBuilder.Entity("TrainBooking.Models.Context.Ticket", b =>
                 {
-                    b.Navigation("Sections");
+                    b.Navigation("SectionTickets");
                 });
 
             modelBuilder.Entity("TrainBooking.Models.Context.Train", b =>
