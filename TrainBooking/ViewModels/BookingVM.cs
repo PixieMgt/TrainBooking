@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
+using TrainBooking.Models.Entities;
 
 namespace TrainBooking.ViewModels
 {
@@ -22,5 +23,7 @@ namespace TrainBooking.ViewModels
         public TimeOnly departureTime { get; set; }
 
         public List<SelectListItem>? StationList { get; set; }
+
+        public IEnumerable<PathVM> Paths { get; set; }
     }
 }

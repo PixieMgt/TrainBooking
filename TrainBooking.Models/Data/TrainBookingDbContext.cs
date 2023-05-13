@@ -38,6 +38,8 @@ namespace TrainBooking.Models.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.UseCollation("Latin1_General_CI_AS");
+
             modelBuilder.Entity<Booking>(entity =>
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
@@ -62,6 +64,12 @@ namespace TrainBooking.Models.Data
                     .HasForeignKey(d => d.DestinationStationId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Sections_Stations1");
+
+                entity.HasOne(d => d.Train)
+                    .WithMany(p => p.Sections)
+                    .HasForeignKey(d => d.TrainId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Sections_Trains");
 
                 entity.HasMany(d => d.Tickets)
                     .WithMany(p => p.Sections)

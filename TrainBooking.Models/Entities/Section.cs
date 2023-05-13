@@ -19,6 +19,7 @@ namespace TrainBooking.Models.Entities
 
         public virtual Station DepartureStation { get; set; } = null!;
         public virtual Station DestinationStation { get; set; } = null!;
+        public virtual Train Train { get; set; } = null!;
 
         public virtual ICollection<Ticket> Tickets { get; set; }
     }

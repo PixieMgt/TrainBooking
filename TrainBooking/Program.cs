@@ -36,6 +36,9 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddTransient<IService<Station>, StationService>();
 builder.Services.AddTransient<IDAO<Station>, StationDAO>();
 
+builder.Services.AddTransient<IService<Section>, SectionService>();
+builder.Services.AddTransient<IDAO<Section>, SectionDAO>();
+
 var supportedCultures = new[] { "en", "nl" };
 
 builder.Services.Configure<RequestLocalizationOptions>(options =>

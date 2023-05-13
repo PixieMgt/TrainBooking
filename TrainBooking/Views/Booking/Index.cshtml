@@ -32,6 +32,27 @@
         </form>
     </div>
 </div>
+@if (@Model.Paths != null)
+{
+    <div class="row">
+        <table class="table">
+            @foreach (var item in Model.Paths) {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.DepartureStation.City)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DestinationStation.City)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DepartureTime)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DestinationTime)</td>
+                    <td>
+                        <a asp-action="Select" asp-route-id="">Select</a>
+                    </td>
+                    
+                </tr>
+                
+            }
+        </table>
+    </div>
+}
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

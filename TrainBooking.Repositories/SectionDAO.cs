@@ -44,6 +44,9 @@ namespace TrainBooking.Repositories
             try
             {
                 return await _dbContext.Sections
+                    .Include(s => s.DepartureStation)
+                    .Include(s => s.DestinationStation)
+                    .Include(s => s.Train)
                     .ToListAsync();
             }
             catch (Exception ex)
@@ -56,6 +59,26 @@ namespace TrainBooking.Repositories
         public Task Update(Section entity)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<Section>> GetPaths(Station departureStation, Station destinationStation)
+        {
+            try
+            {
+                return await _dbContext.Sections
+                    .Include(s => s.DepartureStation)
+                    .Include(s => s.DestinationStation)
+                    .Where(s => s.DepartureStation == departureStation)
+                    .Include(s => s.Train)
+                    .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error in DAO");
+                throw;
+            }
+            
+       
         }
     }
 }
