@@ -10,41 +10,41 @@ using TrainBooking.Repositories.Interfaces;
 
 namespace TrainBooking.Repositories
 {
-    public class StationDAO : IDAO<Station>
+    public class TrainDAO : IDAO<Train>
     {
         private readonly TrainBookingDbContext _dbContext;
-        public StationDAO()
+        public TrainDAO()
         {
             _dbContext = new TrainBookingDbContext();
         }
-        public Task Add(Station entity)
+        public Task Add(Train entity)
         {
             throw new NotImplementedException();
         }
 
-        public Task Delete(Station entity)
+        public Task Delete(Train entity)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<Station> FindById(int id)
+        public async Task<Train> FindById(int id)
         {
             try
             {
 
-                return await _dbContext.Stations.Where(s => s.Id == id)
-                                                .FirstOrDefaultAsync();
+                return await _dbContext.Trains.Where(s => s.Id == id)
+                                              .FirstOrDefaultAsync();
             }
             catch (Exception ex)
-            { throw new Exception("error DAO Station"); }
+            { throw new Exception("error DAO Train"); }
         }
 
-        public async Task<IEnumerable<Station>> GetAll()
+        public async Task<IEnumerable<Train>> GetAll()
         {
             try
             {
-                return await _dbContext.Stations
-                    .ToListAsync(); 
+                return await _dbContext.Trains
+                    .ToListAsync();
             }
             catch (Exception ex)
             {
@@ -53,7 +53,7 @@ namespace TrainBooking.Repositories
             }
         }
 
-        public Task Update(Station entity)
+        public Task Update(Train entity)
         {
             throw new NotImplementedException();
         }
