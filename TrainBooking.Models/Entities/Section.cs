@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TrainBooking.Models.Entities
 {
@@ -14,7 +15,7 @@ namespace TrainBooking.Models.Entities
         public int DepartureStationId { get; set; }
         public int DestinationStationId { get; set; }
         public TimeSpan DepartureTime { get; set; }
-        public TimeSpan DestinationTime { get; set; }
+        public TimeSpan ArrivalTime { get; set; }
         public int TrainId { get; set; }
 
         public virtual Station DepartureStation { get; set; } = null!;

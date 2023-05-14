@@ -14,5 +14,6 @@
         public TimeSpan ArrivalTime { get; set; }
         public string DepartureStation { get; set; }
         public string DestinationStation { get; set; }
+        public string Class { get; set; }
     }
 }

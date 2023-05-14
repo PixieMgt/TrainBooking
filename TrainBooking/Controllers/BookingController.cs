@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Diagnostics;
 using System.Linq;
 using TrainBooking.Extensions;
 using TrainBooking.Models.Entities;
@@ -145,6 +146,42 @@ namespace TrainBooking.Controllers
                 }
             }
             return paths;
+        }
+
+        public async Task<IActionResult> Ticket(int? Id, DateOnly departureDate, DateOnly arrivalDate, string selectedClass)
+        {
+            if (Id == null)
+            {
+                return NotFound();
+            }
+
+            Section? section = await _sectionService.FindById(Convert.ToInt32(Id));
+
+            CartItemVM item = new CartItemVM
+            {
+                Id = Convert.ToInt32(Id),
+                DepartureDate = departureDate,
+                DepartureTime = section.DepartureTime,
+                ArrivalDate = arrivalDate,
+                ArrivalTime = section.ArrivalTime,
+                DepartureStation = section.DepartureStation.City,
+                DestinationStation = section.DestinationStation.City,
+                Class = selectedClass
+            };
+
+            ShoppingCartVM? cart = HttpContext.Session.GetObject<ShoppingCartVM>("ShoppingCart");
+
+            if (cart == null) 
+            {
+                cart = new ShoppingCartVM();
+                cart.Cart = new List<CartItemVM>();
+            }
+
+            cart?.Cart?.Add(item);
+
+            HttpContext.Session.SetObject("ShoppingCart", cart);
+
+            return RedirectToAction("Index", "ShoppingCart");
         }
     }
 }
