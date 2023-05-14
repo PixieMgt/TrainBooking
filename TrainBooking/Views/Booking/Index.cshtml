@@ -71,8 +71,8 @@
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.SectionsVM.First().DepartureStation)</td>
                         <td>@Html.DisplayFor(modelItem => item.SectionsVM.Last().DestinationStation)</td>
-                        <td>@Model.departureDate @Html.DisplayFor(modelItem => item.SectionsVM.First().DepartureTime)</td>
-                        <td>@Model.departureDate @Html.DisplayFor(modelItem => item.SectionsVM.Last().ArrivalTime)</td>
+                        <td>@Html.DisplayFor(modelItem => item.SectionsVM.First().DepartureTime)</td>
+                        <td>@Html.DisplayFor(modelItem => item.SectionsVM.Last().ArrivalTime)</td>
                         <td>
                             <a asp-action="Path">Buy ticket</a>
                         </td>
