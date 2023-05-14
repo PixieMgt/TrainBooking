@@ -51,7 +51,7 @@ namespace TrainBooking.Models.Data
 
                 entity.Property(e => e.DepartureTime).HasColumnType("timespan");
 
-                entity.Property(e => e.DestinationTime).HasColumnType("timespan");
+                entity.Property(e => e.ArrivalTime).HasColumnType("timespan");
 
                 entity.HasOne(d => d.DepartureStation)
                     .WithMany(p => p.SectionDepartureStations)

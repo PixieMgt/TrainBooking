@@ -17,15 +17,15 @@
                     <td>Departure</td>
                     <td>@Html.DisplayFor(modelItem => item.DepartureStation)</td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.DepartureDate.Day)/@Html.DisplayFor(modelItem => item.ArrivalDate.Month)/@Html.DisplayFor(modelItem => item.ArrivalDate.Year) 
                         @Html.DisplayFor(modelItem => item.DepartureTime)
                     </td>
                 </tr>
                 <tr>
                     <td>Arrival</td>
                     <td>@Html.DisplayFor(modelItem => item.DestinationStation)</td>
-                    <td>@Html.DisplayFor(modelItem => item.ArrivalDate.Day)/@Html.DisplayFor(modelItem => item.ArrivalDate.Month)/@Html.DisplayFor(modelItem => item.ArrivalDate.Year)
-                        @Html.DisplayFor(modelItem => item.ArrivalTime)</td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ArrivalTime)
+                    </td>
                 </tr>
             }
         }

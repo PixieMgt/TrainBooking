@@ -10779,19 +10779,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vanha\\.nuget\\packages\\": {}
+    "C:\\Users\\pixie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Github\\TrainBooking\\TrainBooking\\TrainBooking.csproj",
+      "projectUniqueName": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking\\TrainBooking.csproj",
       "projectName": "TrainBooking",
-      "projectPath": "C:\\Github\\TrainBooking\\TrainBooking\\TrainBooking.csproj",
-      "packagesPath": "C:\\Users\\vanha\\.nuget\\packages\\",
-      "outputPath": "C:\\Github\\TrainBooking\\TrainBooking\\obj\\",
+      "projectPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking\\TrainBooking.csproj",
+      "packagesPath": "C:\\Users\\pixie\\.nuget\\packages\\",
+      "outputPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\vanha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pixie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10805,11 +10805,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Github\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj": {
-              "projectPath": "C:\\Github\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj"
+            "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj": {
+              "projectPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj"
             },
-            "C:\\Github\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj": {
-              "projectPath": "C:\\Github\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj"
+            "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj": {
+              "projectPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Services\\TrainBooking.Services.csproj"
             }
           }
         }
@@ -10880,7 +10880,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

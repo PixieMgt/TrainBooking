@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Github\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj": {}
+    "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj": {}
   },
   "projects": {
-    "C:\\Github\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj": {
+    "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj",
+        "projectUniqueName": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj",
         "projectName": "TrainBooking.Models",
-        "projectPath": "C:\\Github\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj",
-        "packagesPath": "C:\\Users\\vanha\\.nuget\\packages\\",
-        "outputPath": "C:\\Github\\TrainBooking\\TrainBooking.Models\\obj\\",
+        "projectPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Models\\TrainBooking.Models.csproj",
+        "packagesPath": "C:\\Users\\pixie\\.nuget\\packages\\",
+        "outputPath": "C:\\school\\Software Development\\Semester 2\\Full Stack Development\\TrainBooking\\TrainBooking\\TrainBooking.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vanha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pixie\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -75,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
