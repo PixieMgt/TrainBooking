@@ -27,9 +27,6 @@
                         @Html.DisplayFor(modelItem => item.ArrivalTime)
                     </td>
                 </tr>
-                <tr>
-                    <button asp-action="Ticket" asp-route-id="" asp-route-departureDate="@item.DepartureDate">Buy</button>
-                </tr>
             }
         }
     </table>
@@ -39,5 +36,9 @@
     </select>
 </div>
 <div>
+    var e = document.getElementById("ddlViewBy");
+    var value = e.value;
+    var text = e.options[e.selectedIndex].text;
+    <button asp-action="Ticket" asp-route-id="" asp-route-departureDate="" asp-route-selectedClass="">Buy</button>
     <a asp-action="Index">Back to List</a>
 </div>

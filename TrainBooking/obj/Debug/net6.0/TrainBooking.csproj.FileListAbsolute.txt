@@ -577,3 +577,9 @@ C:\Github\TrainBooking\TrainBooking\bin\Debug\net6.0\AutoMapper.dll
 C:\Github\TrainBooking\TrainBooking\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\bin\Debug\net6.0\AutoMapper.dll
 C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\bin\Debug\net6.0\de\TrainBooking.resources.dll
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\bin\Debug\net6.0\en\TrainBooking.resources.dll
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Views.Home.index.de.resources
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Views.Home.index.en.resources
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\de\TrainBooking.resources.dll
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\en\TrainBooking.resources.dll

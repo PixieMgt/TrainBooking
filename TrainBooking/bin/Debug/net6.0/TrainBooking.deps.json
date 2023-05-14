@@ -23,6 +23,12 @@
           "TrainBooking.dll": {}
         },
         "resources": {
+          "de/TrainBooking.resources.dll": {
+            "locale": "de"
+          },
+          "en/TrainBooking.resources.dll": {
+            "locale": "en"
+          },
           "nl/TrainBooking.resources.dll": {
             "locale": "nl"
           }

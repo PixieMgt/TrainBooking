@@ -13,5 +13,7 @@
     <_SelectedScaffolderCategoryPath>root/Identity</_SelectedScaffolderCategoryPath>
     <NameOfLastUsedPublishProfile>C:\Github\TrainBooking\TrainBooking\Properties\PublishProfiles\TrainBookingPixieMBramVH - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
     <WebStackScaffolding_DbContextDialogWidth>650,4</WebStackScaffolding_DbContextDialogWidth>
+    <Area_SelectedScaffolderID>IdentityScaffolder</Area_SelectedScaffolderID>
+    <Area_SelectedScaffolderCategoryPath>root/Identity</Area_SelectedScaffolderCategoryPath>
   </PropertyGroup>
 </Project>

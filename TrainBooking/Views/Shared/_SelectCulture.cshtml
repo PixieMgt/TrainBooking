@@ -3,7 +3,6 @@
 @using Microsoft.Extensions.Options
 
 
-@inject IViewLocalizer Localizer
 @inject IOptions<RequestLocalizationOptions> locOptions
 
 @{
@@ -16,13 +15,12 @@
         $"~{Context.Request.Path.Value}";
 }
 
-<div title="@Localizer["Request the culture provider"]
-     @currentRequestCulture?.Provider?.GetType().Name">
+<div>
     <form id="selectLanguage" asp-controller="Home"
           asp-action="SetAppLanguage" asp-route-returnUrl="@responseUrl"
           method="post" class="form-horizontal" role="form">
         <label asp-for="@currentRequestCulture.RequestCulture.UICulture.Name">
-            @Localizer["Select Language"]
+            <img src="./img/language.png" alt="Select a language" style="height: 28px" />
         </label>
         <select name="lang" class="setLang"
                 asp-for="@currentRequestCulture.RequestCulture.UICulture.Name"

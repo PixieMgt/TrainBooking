@@ -47,7 +47,7 @@ builder.Services.AddTransient<IDAO<Station>, StationDAO>();
 builder.Services.AddTransient<IService<Section>, SectionService>();
 builder.Services.AddTransient<IDAO<Section>, SectionDAO>();
 
-var supportedCultures = new[] { "en", "nl" };
+var supportedCultures = new[] { "en", "nl", "de" };
 
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {

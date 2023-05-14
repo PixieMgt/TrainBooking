@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/school/Software Development/Semester 2/Full Stack Development/TrainBooking/TrainBooking/TrainBooking/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/school/Software Development/Semester 2/Full Stack Development/TrainBooking/TrainBooking/TrainBooking/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/school/Software Development/Semester 2/Full Stack Development/TrainBooking/TrainBooking/TrainBooking/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -54,10 +62,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/school/Software Development/Semester 2/Full Stack Development/TrainBooking/TrainBooking/TrainBooking/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/school/Software Development/Semester 2/Full Stack Development/TrainBooking/TrainBooking/TrainBooking/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/school/Software Development/Semester 2/Full Stack Development/TrainBooking/TrainBooking/TrainBooking/Views/Shared/Error.cshtml]
