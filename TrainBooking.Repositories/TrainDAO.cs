@@ -36,7 +36,10 @@ namespace TrainBooking.Repositories
                                               .FirstOrDefaultAsync();
             }
             catch (Exception ex)
-            { throw new Exception("error DAO Train"); }
+            {
+                Console.WriteLine(ex.Message);
+                throw new Exception("error DAO Train"); 
+            }
         }
 
         public async Task<IEnumerable<Train>> GetAll()
@@ -48,7 +51,7 @@ namespace TrainBooking.Repositories
             }
             catch (Exception ex)
             {
-                Console.WriteLine("error in DAO");
+                Console.WriteLine("error in DAO: " + ex.Message);
                 throw;
             }
         }
