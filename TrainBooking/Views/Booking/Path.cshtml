@@ -27,6 +27,9 @@
                         @Html.DisplayFor(modelItem => item.ArrivalTime)
                     </td>
                 </tr>
+                <tr>
+                    <button asp-action="Ticket" asp-route-id="" asp-route-departureDate="@item.DepartureDate">Buy</button>
+                </tr>
             }
         }
     </table>
@@ -34,7 +37,6 @@
         <option>Economy class</option>
         <option>Business class</option>
     </select>
-    <button asp-action="Ticket">Buy</button>
 </div>
 <div>
     <a asp-action="Index">Back to List</a>

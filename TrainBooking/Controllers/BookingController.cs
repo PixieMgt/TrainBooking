@@ -148,7 +148,7 @@ namespace TrainBooking.Controllers
             return paths;
         }
 
-        public async Task<IActionResult> Ticket(int? Id)
+        public async Task<IActionResult> Ticket(int? Id, DateOnly departureDate, DateOnly arrivalDate, string selectedClass)
         {
             if (Id == null)
             {
@@ -160,10 +160,13 @@ namespace TrainBooking.Controllers
             CartItemVM item = new CartItemVM
             {
                 Id = Convert.ToInt32(Id),
+                DepartureDate = departureDate,
                 DepartureTime = section.DepartureTime,
+                ArrivalDate = arrivalDate,
                 ArrivalTime = section.ArrivalTime,
                 DepartureStation = section.DepartureStation.City,
-                DestinationStation = section.DestinationStation.City
+                DestinationStation = section.DestinationStation.City,
+                Class = selectedClass
             };
 
             ShoppingCartVM? cart = HttpContext.Session.GetObject<ShoppingCartVM>("ShoppingCart");
