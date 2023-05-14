@@ -609,3 +609,5 @@ C:\Github\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.genruntimeconf
 C:\Github\TrainBooking\TrainBooking\obj\Debug\net6.0\ref\TrainBooking.dll
 C:\Github\TrainBooking\TrainBooking\bin\Debug\net6.0\AutoMapper.dll
 C:\Github\TrainBooking\TrainBooking\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\bin\Debug\net6.0\AutoMapper.dll
+C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
