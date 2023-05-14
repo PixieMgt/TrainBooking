@@ -38,12 +38,12 @@
         <table class="table">
             @foreach (var item in Model.Paths) {
                 <tr>
-                    <td>@Html.DisplayFor(modelItem => item.DepartureStation.City)</td>
-                    <td>@Html.DisplayFor(modelItem => item.DestinationStation.City)</td>
-                    <td>@Html.DisplayFor(modelItem => item.DepartureTime)</td>
-                    <td>@Html.DisplayFor(modelItem => item.DestinationTime)</td>
+                    <td>@Html.DisplayFor(modelItem => item.SectionsVM.First().DepartureStation)</td>
+                    <td>@Html.DisplayFor(modelItem => item.SectionsVM.Last().DestinationStation)</td>
+                    <td>@Html.DisplayFor(modelItem => item.SectionsVM.First().DepartureTime)</td>
+                    <td>@Html.DisplayFor(modelItem => item.SectionsVM.Last().DestinationTime)</td>
                     <td>
-                        <a asp-action="Select" asp-route-id="">Select</a>
+                        <a asp-action="Path" asp-route-id="@item.Id" asp-route-id="">Path</a>
                     </td>
                     
                 </tr>

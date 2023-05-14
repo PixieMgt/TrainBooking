@@ -2,9 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Linq;
+using TrainBooking.Extensions;
 using TrainBooking.Models.Entities;
 using TrainBooking.Services.Interfaces;
 using TrainBooking.ViewModels;
+using static System.Collections.Specialized.BitVector32;
+using Section = TrainBooking.Models.Entities.Section;
 
 namespace TrainBooking.Controllers
 {
@@ -44,11 +47,8 @@ namespace TrainBooking.Controllers
                 foreach (var section in directConnections)
                 {
                     var path = new PathVM();
-                    path.Sections.Add(section);
-                    path.DepartureTime = section.DepartureTime;
-                    path.DepartureStation = section.DepartureStation;
-                    path.DestinationTime = section.DestinationTime;
-                    path.DestinationStation = section.DestinationStation;
+                    
+                    path.SectionsVM.Add(_mapper.Map<SectionVM>(section));
                     paths.Add(path);
                 }
             }else
@@ -56,7 +56,7 @@ namespace TrainBooking.Controllers
                 var departures = sectionList.Where((a) => a.DepartureStation.Id.ToString().Equals(booking.departureStation)).OrderBy(s => s.DepartureTime).ToList();
                 List<Section> inbetweens = sectionList.Where((a) => isBetweenLocations(a, booking)).OrderBy(s => s.DepartureTime).ToList();
                 var destinations = sectionList.Where((a) => a.DestinationStation.Id.ToString().Equals(booking.arrivalStation)).OrderBy(s => s.DepartureTime).ToList();
-                paths = makePaths(departures, inbetweens, destinations);
+                paths = makePaths(_mapper.Map<List<SectionVM>>(departures), _mapper.Map<List<SectionVM>>(inbetweens), _mapper.Map<List<SectionVM>>(destinations));
             }
             
             var stationList = await _stationService.GetAll();
@@ -65,9 +65,28 @@ namespace TrainBooking.Controllers
                 Text = x.City,
                 Value = x.Id.ToString(),
             }).ToList() : null;
+            for (var i = 0; i < paths.Count; i++)
+            {
+                paths[i].Id = i;
+            }
+            HttpContext.Session.SetObject("PathList", paths);
             booking.Paths = paths;
 
             return View(booking);
+        }
+        
+        public IActionResult Path(int id)
+        {
+            PathVM? path;
+            if(HttpContext.Session.GetObject<List<PathVM>>("PathList") != null)
+            {
+                path = HttpContext.Session.GetObject<List<PathVM>>("PathList").First(s => s.Id == id);
+            }
+            else
+            {
+                path = new PathVM();
+            }
+            return View(path);
         }
 
         private bool isBetweenLocations(Section section, BookingVM booking)
@@ -87,7 +106,7 @@ namespace TrainBooking.Controllers
             }
             return false;
         }
-        private List<PathVM> makePaths(List<Section> departures, List<Section> inbetweens, List<Section> destinations)
+        private List<PathVM> makePaths(List<SectionVM> departures, List<SectionVM> inbetweens, List<SectionVM> destinations)
         {
             List<PathVM> paths = new List<PathVM>();
             if (inbetweens.Count() > 0)
@@ -96,7 +115,7 @@ namespace TrainBooking.Controllers
                 {
                     
                     var inbetween = inbetweens.FirstOrDefault(s => s.DepartureStation.Equals(departure.DestinationStation) && s.DepartureTime >= departure.DestinationTime);
-                    Section? destination = null;
+                    SectionVM? destination = null;
                     if (inbetween != null)
                     {
                         destination = destinations.FirstOrDefault(s => s.DepartureStation.Equals(inbetween.DestinationStation) && s.DepartureTime >= inbetween.DestinationTime);
@@ -104,13 +123,9 @@ namespace TrainBooking.Controllers
                     if (destination != null)
                     {
                         var path = new PathVM();
-                        path.DepartureStation = departure.DepartureStation;
-                        path.DepartureTime = departure.DepartureTime;
-                        path.DestinationStation = destination.DestinationStation;
-                        path.DestinationTime = destination.DestinationTime;
-                        path.Sections.Add(departure);
-                        path.Sections.Add(inbetween);
-                        path.Sections.Add(destination);
+                        path.SectionsVM.Add(departure);
+                        path.SectionsVM.Add(inbetween);
+                        path.SectionsVM.Add(destination);
                         paths.Add(path);
                     }
                 }
@@ -122,12 +137,8 @@ namespace TrainBooking.Controllers
                     if (destination != null)
                     {
                         var path = new PathVM();
-                        path.DepartureStation = departure.DepartureStation;
-                        path.DepartureTime = departure.DepartureTime;
-                        path.DestinationStation = destination.DestinationStation;
-                        path.DestinationTime = destination.DestinationTime;
-                        path.Sections.Add(departure);
-                        path.Sections.Add(destination);
+                        path.SectionsVM.Add(departure);
+                        path.SectionsVM.Add(destination);
                         paths.Add(path);
                     }
                 }

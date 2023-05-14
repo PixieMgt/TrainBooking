@@ -29,6 +29,13 @@ builder.Services.AddControllersWithViews()
     .AddViewLocalization(LanguageViewLocationExpanderFormat.SubFolder) // translation on views
     .AddDataAnnotationsLocalization(); // translation on viewmodels
 
+//session
+builder.Services.AddSession(options =>
+{
+    options.Cookie.Name = "be.VIVES.TrainBookingPB";
+    options.IdleTimeout = TimeSpan.FromMinutes(1);
+});
+
 // Add Automapper
 builder.Services.AddAutoMapper(typeof(Program));
 
@@ -74,6 +81,9 @@ var localizationOptions = new RequestLocalizationOptions()
 app.UseRequestLocalization(localizationOptions);
 
 app.UseRouting();
+
+//add session
+app.UseSession();
 
 app.UseAuthentication();
 app.UseAuthorization();

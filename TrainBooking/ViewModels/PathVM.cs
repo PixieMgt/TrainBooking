@@ -6,12 +6,9 @@ namespace TrainBooking.ViewModels
     {
         public PathVM()
         {
-            Sections = new List<Section>();
+            SectionsVM = new List<SectionVM>();
         }
-        public List<Section?> Sections { get; set; }
-        public Station DepartureStation { get; set; }
-        public Station DestinationStation { get; set; }
-        public DateTime DepartureTime { get; set; }
-        public DateTime DestinationTime { get; set; }
+        public int Id { get; set; }
+        public List<SectionVM?> SectionsVM { get; set; }
     }
 }

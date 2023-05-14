@@ -1,0 +1,40 @@
+﻿@model TrainBooking.ViewModels.PathVM
+
+@{
+    ViewData["Title"] = "Select";
+}
+
+<h1>Select</h1>
+
+<div>
+    <h4>PathVM</h4>
+    <hr />
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Station</th>
+            <th>Time</th>
+            <th>Economy Class Capacity</th>
+            <th>Business Class Capacity</th>
+        </tr>
+        @foreach(var item in Model.SectionsVM){
+            <tr>
+                <td>Departure</td>
+                <td>@Html.DisplayFor(modelItem => item.DepartureStation)</td>
+                <td>@Html.DisplayFor(modelItem => item.DepartureTime)</td>
+                <td rowspan="2">@Html.DisplayFor(modelItem => item.EconomyClassCapacity)</td>
+                <td rowspan="2">@Html.DisplayFor(modelItem => item.BusinessClassCapacity)</td>
+            </tr>
+            <tr>
+                <td>Arrival</td>
+                <td>@Html.DisplayFor(modelItem => item.DestinationStation)</td>
+                <td>@Html.DisplayFor(modelItem => item.DestinationTime)</td>
+            </tr>
+        }
+        
+    </table>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
