@@ -54,11 +54,11 @@ namespace TrainBooking.Controllers
             }else
             {
                 var departures = sectionList.Where((a) => a.DepartureStation.Id.ToString().Equals(booking.departureStation)).OrderBy(s => s.DepartureTime).ToList();
-                List<Section> inbetweens = sectionList.Where((a) => isBetweenLocations(a, booking)).OrderBy(s => s.DepartureTime).ToList();
+                List<Section> middleSections = sectionList.Where((a) => isMiddleSection(a, booking)).OrderBy(s => s.DepartureTime).ToList();
                 var destinations = sectionList.Where((a) => a.DestinationStation.Id.ToString().Equals(booking.arrivalStation)).OrderBy(s => s.DepartureTime).ToList();
-                paths = makePaths(_mapper.Map<List<SectionVM>>(departures), _mapper.Map<List<SectionVM>>(inbetweens), _mapper.Map<List<SectionVM>>(destinations));
+                paths = makePaths(_mapper.Map<List<SectionVM>>(departures), _mapper.Map<List<SectionVM>>(middleSections), _mapper.Map<List<SectionVM>>(destinations));
             }
-            
+
             var stationList = await _stationService.GetAll();
             booking.StationList = stationList != null ? stationList.Select(x => new SelectListItem
             {
@@ -89,7 +89,7 @@ namespace TrainBooking.Controllers
             return View(path);
         }
 
-        private bool isBetweenLocations(Section section, BookingVM booking)
+        private bool isMiddleSection(Section section, BookingVM booking)
         {
             if (booking.departureStation.Equals("7") && new String[]{ "1", "3" }.Contains(booking.arrivalStation)) //Van Moskou naar London of Parijs
             { 
@@ -106,25 +106,26 @@ namespace TrainBooking.Controllers
             }
             return false;
         }
-        private List<PathVM> makePaths(List<SectionVM> departures, List<SectionVM> inbetweens, List<SectionVM> destinations)
+
+        private List<PathVM> makePaths(List<SectionVM> departures, List<SectionVM> middleSections, List<SectionVM> destinations)
         {
             List<PathVM> paths = new List<PathVM>();
-            if (inbetweens.Count() > 0)
+            if (middleSections.Count() > 0)
             {
                 foreach (var departure in departures)
                 {
                     
-                    var inbetween = inbetweens.FirstOrDefault(s => s.DepartureStation.Equals(departure.DestinationStation) && s.DepartureTime >= departure.DestinationTime);
+                    var middleSection = middleSections.FirstOrDefault(s => s.DepartureStation.Equals(departure.DestinationStation) && s.DepartureTime >= departure.ArrivalTime);
                     SectionVM? destination = null;
-                    if (inbetween != null)
+                    if (middleSection != null)
                     {
-                        destination = destinations.FirstOrDefault(s => s.DepartureStation.Equals(inbetween.DestinationStation) && s.DepartureTime >= inbetween.DestinationTime);
+                        destination = destinations.FirstOrDefault(s => s.DepartureStation.Equals(middleSection.DestinationStation) && s.DepartureTime >= middleSection.ArrivalTime);
                     }
                     if (destination != null)
                     {
                         var path = new PathVM();
                         path.SectionsVM.Add(departure);
-                        path.SectionsVM.Add(inbetween);
+                        path.SectionsVM.Add(middleSection);
                         path.SectionsVM.Add(destination);
                         paths.Add(path);
                     }
@@ -133,7 +134,7 @@ namespace TrainBooking.Controllers
             {
                 foreach(var departure in departures)
                 {
-                    var destination = destinations.FirstOrDefault(s => s.DepartureStation.Equals(departure.DestinationStation) && s.DepartureTime >= departure.DestinationTime);
+                    var destination = destinations.FirstOrDefault(s => s.DepartureStation.Equals(departure.DestinationStation) && s.DepartureTime >= departure.ArrivalTime);
                     if (destination != null)
                     {
                         var path = new PathVM();

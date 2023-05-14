@@ -13,8 +13,8 @@ namespace TrainBooking.Models.Entities
         public int Id { get; set; }
         public int DepartureStationId { get; set; }
         public int DestinationStationId { get; set; }
-        public DateTime DepartureTime { get; set; }
-        public DateTime DestinationTime { get; set; }
+        public TimeSpan DepartureTime { get; set; }
+        public TimeSpan DestinationTime { get; set; }
         public int TrainId { get; set; }
 
         public virtual Station DepartureStation { get; set; } = null!;
