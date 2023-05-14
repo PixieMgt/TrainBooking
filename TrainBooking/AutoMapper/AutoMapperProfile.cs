@@ -23,10 +23,6 @@ namespace TrainBooking.AutoMapper
                 .ForMember(dest => dest.BusinessClassCapacity,
                 opts => opts.MapFrom(
                     src => src.Train.BusinessClassCapacity
-                    ))
-                .ForMember(dest => dest.DepartureDate,
-                opts => opts.MapFrom(
-                    src => src.DepartureTime
                     ));
 
             CreateMap<Station, StationVM>();

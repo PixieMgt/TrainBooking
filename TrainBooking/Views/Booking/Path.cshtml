@@ -27,10 +27,11 @@
                         @Html.DisplayFor(modelItem => item.ArrivalTime)
                     </td>
                 </tr>
-                <tr>
-                    <button asp-action="Ticket" asp-route-id="" asp-route-departureDate="@item.DepartureDate">Buy</button>
-                </tr>
+
             }
+                <tr>
+                    <button asp-action="Ticket" asp-route-id="" asp-route-departureDate="@Model.Date">Buy</button>
+                </tr>
         }
     </table>
     <select>

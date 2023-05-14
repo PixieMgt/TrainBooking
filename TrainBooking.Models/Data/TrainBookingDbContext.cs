@@ -34,8 +34,11 @@ namespace TrainBooking.Models.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server = beershopvives39.database.windows.net; Initial Catalog = TrainBooking; User ID = Beheerder; Password =  Azerty123; MultipleActiveResultSets = True; Encrypt = True; TrustServerCertificate = True;");
+                IConfigurationRoot configuration = new ConfigurationBuilder()
+                                      .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                                      .AddJsonFile("appsettings.json")
+                                      .Build();
+                optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             }
         }
 
@@ -140,10 +143,6 @@ namespace TrainBooking.Models.Data
             modelBuilder.Entity<Section>(entity =>
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
-
-                entity.Property(e => e.DepartureTime).HasColumnType("timespan");
-
-                entity.Property(e => e.ArrivalTime).HasColumnType("timespan");
 
                 entity.HasOne(d => d.DepartureStation)
                     .WithMany(p => p.SectionDepartureStations)

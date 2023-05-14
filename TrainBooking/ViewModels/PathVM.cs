@@ -9,6 +9,7 @@ namespace TrainBooking.ViewModels
             SectionsVM = new List<SectionVM>();
         }
         public int Id { get; set; }
+        public DateOnly Date { get; set; }
         public List<SectionVM?> SectionsVM { get; set; }
     }
 }
