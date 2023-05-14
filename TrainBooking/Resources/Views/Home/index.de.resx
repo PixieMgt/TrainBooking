@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Book a Train" xml:space="preserve">
-    <value>Boek een Trein</value>
+    <value>Einen Zug buchen</value>
   </data>
   <data name="Introduction Text" xml:space="preserve">
-    <value>Dit is de introductie</value>
+    <value>Dies ist die Einführung</value>
   </data>
   <data name="Welcome" xml:space="preserve">
-    <value>Welkom</value>
+    <value>Willkommen</value>
   </data>
 </root>

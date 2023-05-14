@@ -23,7 +23,9 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="Index">Travel</a>
                         </li>
                         <li class="navbar-nav flex-grow-1">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ShoppingCart" asp-action="Index">Cart</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ShoppingCart" asp-action="Index">
+                                <img src="./img/cart.png" alt="Shopping Cart" style="height: 28px" />
+                            </a>
                         </li>
                     </ul>
                     @await Html.PartialAsync("_SelectCulture")
