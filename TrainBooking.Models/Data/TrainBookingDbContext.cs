@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 using TrainBooking.Models.Entities;
 
 namespace TrainBooking.Models.Data
@@ -139,6 +140,10 @@ namespace TrainBooking.Models.Data
             modelBuilder.Entity<Section>(entity =>
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
+
+                entity.Property(e => e.DepartureTime).HasColumnType("timespan");
+
+                entity.Property(e => e.ArrivalTime).HasColumnType("timespan");
 
                 entity.HasOne(d => d.DepartureStation)
                     .WithMany(p => p.SectionDepartureStations)
