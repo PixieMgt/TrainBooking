@@ -286,25 +286,8 @@ C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\Tr
 C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.csproj.GenerateResource.cache
 C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\bin\Debug\net6.0\nl\TrainBooking.resources.dll
 C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\nl\TrainBooking.resources.dll
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\bin\Debug\net6.0\en\TrainBooking.resources.dll
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Views.Shared._SelectCulture.en.resources
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Views.Shared._SelectCulture.nl.resources
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\en\TrainBooking.resources.dll
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.ViewModels.BookingVM.nl.resources
 C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Views.Home.index.nl.resources
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Views.Shared._LoginPartial.en.resources
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Views.Shared._LoginPartial.nl.resources
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Views.Booking.Index.en.resources
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Views.Booking.index.nl.resources
 C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Areas.Identity.Pages.Account.Register.en.resources
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Areas.Identity.Pages.Account.Register.nl.resources
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Areas.Identity.Pages.Account.Login.en.resources
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Areas.Identity.Pages.Account.Login.nl.resources
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Areas.Identity.Pages.Account.ForgotPassword.en.resources
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Areas.Identity.Pages.Account.ForgotPassword.nl.resources
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Areas.Identity.Pages.Account.ResendEmailConfirmation.en.resources
-C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\obj\Debug\net6.0\TrainBooking.Resources.Areas.Identity.Pages.Account.ResendEmailConfirmation.nl.resources
 C:\Github\TrainBooking\TrainBooking\bin\Debug\net6.0\appsettings.Development.json
 C:\Github\TrainBooking\TrainBooking\bin\Debug\net6.0\appsettings.json
 C:\Github\TrainBooking\TrainBooking\bin\Debug\net6.0\TrainBooking.staticwebassets.runtime.json
