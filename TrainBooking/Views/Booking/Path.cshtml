@@ -36,9 +36,12 @@
     </select>
 </div>
 <div>
-    var e = document.getElementById("ddlViewBy");
-    var value = e.value;
-    var text = e.options[e.selectedIndex].text;
+    <script>
+        var e = document.getElementById("ddlViewBy");
+        var value = e.value;
+        var text = e.options[e.selectedIndex].text;
+    </script>
+    
     <button asp-action="Ticket" asp-route-id="" asp-route-departureDate="" asp-route-selectedClass="">Buy</button>
     <a asp-action="Index">Back to List</a>
 </div>
