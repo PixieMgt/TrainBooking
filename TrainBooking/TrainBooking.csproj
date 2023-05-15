@@ -29,8 +29,4 @@
     <ProjectReference Include="..\TrainBooking.Services\TrainBooking.Services.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\API\" />
-  </ItemGroup>
-
 </Project>

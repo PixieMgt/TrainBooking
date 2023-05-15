@@ -10,8 +10,9 @@
 {
 
     <form asp-action="Payment">
-        <table>
+        <table class="table">
             <tr>
+                <th>Date</th>
                 <th>From</th>
                 <th>To</th>
                 <th>Departure</th>
@@ -24,6 +25,11 @@
             {
 
                 <tr>
+                    <td>@Model.Cart[i].DepartureDate</td>
+                    <td>@Model.Cart[i].Sections.FirstOrDefault().DepartureStation</td>
+                    <td>@Model.Cart[i].Sections.LastOrDefault().DestinationStation</td>
+                    <td>@Model.Cart[i].Sections.LastOrDefault().DepartureTime</td>
+                    <td>@Model.Cart[i].Sections.LastOrDefault().ArrivalTime</td>
                     <td>
                         <a asp-action="Delete" asp-route-bierNr="@Model.Cart[i].Id">
                             Delete
@@ -31,12 +37,7 @@
                     </td>
                 </tr>
             }
-            <tr>
-                <td>
-                    <input type="submit" value="Checkout"
-                           class="btn btn-default" />
-                </td>
-            </tr>
+            
             <tr>
 
                 <td id="cart-total">
@@ -45,6 +46,10 @@
                 </td>
             </tr>
         </table>
+      
+                <input type="submit" value="Checkout"
+                   class="btn btn-default" />
+            
     </form>
 }
 else

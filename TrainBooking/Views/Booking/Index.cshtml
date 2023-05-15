@@ -66,19 +66,19 @@
             }
             @foreach (var item in Model.Paths)
             {
-                @if (item.SectionsVM.First().DepartureTime > Model.departureTime)
-                {
+                
+                
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.SectionsVM.First().DepartureStation)</td>
                         <td>@Html.DisplayFor(modelItem => item.SectionsVM.Last().DestinationStation)</td>
                         <td>@Html.DisplayFor(modelItem => item.SectionsVM.First().DepartureTime)</td>
                         <td>@Html.DisplayFor(modelItem => item.SectionsVM.Last().ArrivalTime)</td>
                         <td>
-                            <a asp-action="Path">Buy ticket</a>
+                            <a asp-action="Path" asp-route-id="@item.Id">Buy ticket</a>
                         </td>
 
                     </tr>
-                }
+                
             }
         </table>
     </div>
