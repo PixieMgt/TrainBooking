@@ -34,7 +34,7 @@ builder.Services.AddControllersWithViews()
 builder.Services.AddSession(options =>
 {
     options.Cookie.Name = "be.VIVES.TrainBookingPB";
-    options.IdleTimeout = TimeSpan.FromMinutes(1);
+    options.IdleTimeout = TimeSpan.FromMinutes(60);
 });
 
 // Add Automapper

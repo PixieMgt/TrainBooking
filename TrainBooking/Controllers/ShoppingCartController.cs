@@ -15,18 +15,19 @@ namespace TrainBooking.Controllers
             return View(cartList);
         }
 
-        public async Task<IActionResult> Delete(int? Id)
+        public IActionResult Delete(int? Id)
         {
             ShoppingCartVM? cartList = HttpContext.Session.GetObject<ShoppingCartVM>("ShoppingCart");
             cartList.Cart.Remove(cartList.Cart.FirstOrDefault(r => r.Id == Id));
             HttpContext.Session.SetObject("ShoppingCart", cartList);
-            return View(cartList);
+            return View("Index", cartList);
         }
 
-        [HttpPost] ActionResult Payment(ShoppingCartVM cart)
+        [HttpPost] 
+        public ActionResult Payment(ShoppingCartVM? cart)
         {
             string? userID = User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            return View(cart);
+            return null;
         }
     }
 }

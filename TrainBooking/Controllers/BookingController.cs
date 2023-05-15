@@ -110,14 +110,15 @@ namespace TrainBooking.Controllers
             if (currentPathVM != null)
             {
                 currentPathVM.Date = pathVM.Date;
-                currentPathVM.Id = pathVM.Id;
+                currentPathVM.Class = pathVM.Class;
                 CartItemVM item = new CartItemVM
                 {
                     Id = currentPathVM.Id,
                     DepartureDate = currentPathVM.Date,
-                    Sections = currentPathVM.SectionsVM,
+                    //Sections = currentPathVM.SectionsVM,
                     SeatNumber = 1,
-                    Class = "Economic Class"
+                    Class = currentPathVM.Class,
+                    Price = 25
                 };
                 ShoppingCartVM? shopping;
                 if (HttpContext.Session.GetObject<ShoppingCartVM>("ShoppingCart") != null)
@@ -129,6 +130,12 @@ namespace TrainBooking.Controllers
                     shopping = new ShoppingCartVM();
                     shopping.Cart = new List<CartItemVM>();
                 }
+                var lastCartItem = shopping.Cart.LastOrDefault();
+                if (lastCartItem != null)
+                {
+                    item.Id = lastCartItem.Id + 1;
+                }
+                
                 shopping?.Cart?.Add(item);
                 HttpContext.Session.SetObject("ShoppingCart", shopping);
             }
