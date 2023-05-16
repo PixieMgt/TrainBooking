@@ -137,7 +137,12 @@ namespace TrainBooking.Models.Data
 
             modelBuilder.Entity<Booking>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.UserId).HasMaxLength(450);
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.Bookings)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK_Bookings_AspNetUsers");
             });
 
             modelBuilder.Entity<Section>(entity =>
@@ -187,7 +192,7 @@ namespace TrainBooking.Models.Data
 
             modelBuilder.Entity<Ticket>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Date).HasColumnType("date");
 
                 entity.HasOne(d => d.Booking)
                     .WithMany(p => p.Tickets)

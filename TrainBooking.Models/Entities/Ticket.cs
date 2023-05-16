@@ -14,6 +14,7 @@ namespace TrainBooking.Models.Entities
         public int BookingId { get; set; }
         public int? SeatNumber { get; set; }
         public double? Price { get; set; }
+        public DateTime Date { get; set; }
 
         public virtual Booking Booking { get; set; } = null!;
 

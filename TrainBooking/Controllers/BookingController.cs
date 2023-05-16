@@ -115,7 +115,7 @@ namespace TrainBooking.Controllers
                 {
                     Id = currentPathVM.Id,
                     DepartureDate = currentPathVM.Date,
-                    //Sections = currentPathVM.SectionsVM,
+                    Sections = currentPathVM.SectionsVM,
                     SeatNumber = 1,
                     Class = currentPathVM.Class,
                     Price = 25

@@ -11,7 +11,9 @@ namespace TrainBooking.Models.Entities
         }
 
         public int Id { get; set; }
+        public string? UserId { get; set; }
 
+        public virtual AspNetUser? User { get; set; }
         public virtual ICollection<Ticket> Tickets { get; set; }
     }
 }

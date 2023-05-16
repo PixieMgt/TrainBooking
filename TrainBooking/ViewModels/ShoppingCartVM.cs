@@ -12,7 +12,7 @@ namespace TrainBooking.ViewModels
         public int Id { get; set; }
         [DataType(DataType.Date)]
         public string DepartureDate { get; set; }
-        //public List<SectionVM>? Sections { get; set; }
+        public List<SectionVM>? Sections { get; set; }
         public int SeatNumber { get; set; }
         public int Price { get; set; }
         public string Class { get; set; }
