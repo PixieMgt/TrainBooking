@@ -6,6 +6,7 @@ using System.Linq;
 using TrainBooking.Extensions;
 using TrainBooking.Models.Entities;
 using TrainBooking.Services.Interfaces;
+using TrainBooking.Util.Mail;
 using TrainBooking.ViewModels;
 using static System.Collections.Specialized.BitVector32;
 using Section = TrainBooking.Models.Entities.Section;

@@ -8,6 +8,8 @@ using TrainBooking.Repositories.Interfaces;
 using TrainBooking.Services;
 using TrainBooking.Services.Interfaces;
 using TrainBooking.Data;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using TrainBooking.Util.Mail;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +24,17 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddRazorPages();
+
+builder.Services.AddTransient<IEmailSender, EmailSender>();
+builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
+
+builder.Services.ConfigureApplicationCookie(o => {
+    o.ExpireTimeSpan = TimeSpan.FromDays(5);
+    o.SlidingExpiration = true;
+});
+
+builder.Services.Configure<DataProtectionTokenProviderOptions>(o =>
+       o.TokenLifespan = TimeSpan.FromHours(3));
 
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
