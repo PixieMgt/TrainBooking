@@ -10,47 +10,51 @@ using TrainBooking.Repositories.Interfaces;
 
 namespace TrainBooking.Repositories
 {
-    public class SectionDAO : IDAO<Section>
+    public class BookingDAO : IDAO<Booking>
     {
         private readonly TrainBookingDbContext _dbContext;
-        public SectionDAO()
+        public BookingDAO()
         {
             _dbContext = new TrainBookingDbContext();
         }
-        public Task Add(Section entity)
+        public async Task Add(Booking entity)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task Delete(Section entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<Section> FindById(int id)
-        {
+            _dbContext.Entry(entity).State = EntityState.Added;
             try
             {
 
-                return await _dbContext.Sections.
-                    Where(s => s.Id == id)
-                    .Include(s => s.DepartureStation)
-                    .Include(s => s.DestinationStation)
-                    .Include(s => s.Train)
-                    .FirstOrDefaultAsync();
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+        }
+
+        public Task Delete(Booking entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<Booking> FindById(int id)
+        {
+            try
+            {
+                return await _dbContext.Bookings.Where(s => s.Id == id)
+                                                .Include(s => s.Tickets)
+                                                .FirstOrDefaultAsync();
             }
             catch (Exception ex)
             { throw new Exception("error DAO Section"); }
         }
 
-        public async Task<IEnumerable<Section>> GetAll()
+        public async Task<IEnumerable<Booking>> GetAll()
         {
             try
             {
-                return await _dbContext.Sections
-                    .Include(s => s.DepartureStation)
-                    .Include(s => s.DestinationStation)
-                    .Include(s => s.Train)
+                return await _dbContext.Bookings
+                    .Include(s => s.Tickets)
                     .ToListAsync();
             }
             catch (Exception ex)
@@ -60,7 +64,7 @@ namespace TrainBooking.Repositories
             }
         }
 
-        public Task Update(Section entity)
+        public Task Update(Booking entity)
         {
             throw new NotImplementedException();
         }

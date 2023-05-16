@@ -1,4 +1,6 @@
-﻿namespace TrainBooking.ViewModels
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TrainBooking.ViewModels
 {
     public class ShoppingCartVM
     {
@@ -8,12 +10,11 @@
     public class CartItemVM
     {
         public int Id { get; set; }
-        public DateOnly DepartureDate { get; set; }
-        public TimeSpan DepartureTime { get; set; }
-        public DateOnly ArrivalDate { get; set; }
-        public TimeSpan ArrivalTime { get; set; }
-        public string DepartureStation { get; set; }
-        public string DestinationStation { get; set; }
+        [DataType(DataType.Date)]
+        public string DepartureDate { get; set; }
+        public List<SectionVM>? Sections { get; set; }
+        public int SeatNumber { get; set; }
+        public int Price { get; set; }
         public string Class { get; set; }
     }
 }

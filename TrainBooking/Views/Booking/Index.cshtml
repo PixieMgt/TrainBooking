@@ -27,15 +27,6 @@
                 <span asp-validation-for="arrivalStation" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="departureDate" class="control-label">Departure</label>
-                <input type="date" class="form-control" />
-                <span asp-validation-for="departureDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="time" class="form-control" />
-                <span asp-validation-for="departureTime" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <input type="submit" value="@Localizer["Plan my journey"]" class="btn btn-primary" />
             </div>
         </form>
@@ -66,19 +57,19 @@
             }
             @foreach (var item in Model.Paths)
             {
-                @if (item.SectionsVM.First().DepartureTime > Model.departureTime)
-                {
+                
+                
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.SectionsVM.First().DepartureStation)</td>
                         <td>@Html.DisplayFor(modelItem => item.SectionsVM.Last().DestinationStation)</td>
                         <td>@Html.DisplayFor(modelItem => item.SectionsVM.First().DepartureTime)</td>
                         <td>@Html.DisplayFor(modelItem => item.SectionsVM.Last().ArrivalTime)</td>
                         <td>
-                            <a asp-action="Path">Buy ticket</a>
+                            <a asp-action="Path" asp-route-id="@item.Id">Buy ticket</a>
                         </td>
 
                     </tr>
-                }
+                
             }
         </table>
     </div>

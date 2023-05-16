@@ -15,18 +15,16 @@ namespace TrainBooking.AutoMapper
                 .ForMember(dest => dest.DestinationStation,
                 opts => opts.MapFrom(
                     src => src.DestinationStation.City
-                    ))
-                                .ForMember(dest => dest.EconomyClassCapacity,
-                opts => opts.MapFrom(
-                    src => src.Train.EconomyClassCapacity
-                    ))
-                .ForMember(dest => dest.BusinessClassCapacity,
-                opts => opts.MapFrom(
-                    src => src.Train.BusinessClassCapacity
                     ));
+            CreateMap<SectionVM, Section>().ForMember(dest => dest.DepartureStation,
+                opt => opt.Ignore())
+                .ForMember(dest => dest.DestinationStation,
+                opt => opt.Ignore());
 
             CreateMap<Station, StationVM>();
             CreateMap<AspNetUser, UserVM>();
+            CreateMap<Train, TrainVM>();
+            CreateMap<TrainVM, Train>();
         }
     }
 }

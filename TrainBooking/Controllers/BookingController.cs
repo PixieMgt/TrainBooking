@@ -41,6 +41,8 @@ namespace TrainBooking.Controllers
         public async Task<IActionResult> Index(BookingVM booking)
         {
             List<PathVM> paths = new List<PathVM>(); 
+            if (!booking.departureStation.Equals(booking.arrivalStation))
+            {
             var sectionList = await _sectionService.GetAll();
             var directConnections = sectionList.Where((a) => a.DepartureStation.Id.ToString().Equals(booking.departureStation)
                                                         && a.DestinationStation.Id.ToString().Equals(booking.arrivalStation)).ToList().OrderBy(s => s.DepartureTime);
@@ -56,9 +58,15 @@ namespace TrainBooking.Controllers
             }else
             {
                 var departures = sectionList.Where((a) => a.DepartureStation.Id.ToString().Equals(booking.departureStation)).OrderBy(s => s.DepartureTime).ToList();
-                List<Section> middleSections = sectionList.Where((a) => isMiddleSection(a, booking)).OrderBy(s => s.DepartureTime).ToList();
+                var middleSections = sectionList.Where((a) => isMiddleSection(a, booking)).OrderBy(s => s.DepartureTime).ToList();
                 var destinations = sectionList.Where((a) => a.DestinationStation.Id.ToString().Equals(booking.arrivalStation)).OrderBy(s => s.DepartureTime).ToList();
                 paths = makePaths(_mapper.Map<List<SectionVM>>(departures), _mapper.Map<List<SectionVM>>(middleSections), _mapper.Map<List<SectionVM>>(destinations));
+            }
+            for (var i = 0; i < paths.Count; i++)
+            {
+                paths[i].Id = i + 1;
+            }
+            HttpContext.Session.SetObject("PathList", paths);
             }
 
             var stationList = await _stationService.GetAll();
@@ -67,11 +75,8 @@ namespace TrainBooking.Controllers
                 Text = x.City,
                 Value = x.Id.ToString(),
             }).ToList() : null;
-            for (var i = 0; i < paths.Count; i++)
-            {
-                paths[i].Id = i;
-            }
-            HttpContext.Session.SetObject("PathList", paths);
+            
+
             booking.Paths = paths;
 
             return View(booking);
@@ -82,13 +87,60 @@ namespace TrainBooking.Controllers
             PathVM? path;
             if(HttpContext.Session.GetObject<List<PathVM>>("PathList") != null)
             {
-                path = HttpContext.Session.GetObject<List<PathVM>>("PathList").First(s => s.Id == id);
+                path = HttpContext.Session.GetObject<List<PathVM>>("PathList").FirstOrDefault(s => s.Id == id);
             }
             else
             {
                 path = new PathVM();
             }
             return View(path);
+        }
+        [HttpPost]
+        public IActionResult Path(PathVM pathVM)
+        {
+            Console.WriteLine(pathVM);
+            PathVM? currentPathVM;
+            if (HttpContext.Session.GetObject<List<PathVM>>("PathList") != null)
+            {
+                currentPathVM = HttpContext.Session.GetObject<List<PathVM>>("PathList").FirstOrDefault(s => s.Id == pathVM.Id);
+            }
+            else
+            {
+                return NotFound();
+            }
+            if (currentPathVM != null)
+            {
+                currentPathVM.Date = pathVM.Date;
+                currentPathVM.Class = pathVM.Class;
+                CartItemVM item = new CartItemVM
+                {
+                    Id = currentPathVM.Id,
+                    DepartureDate = currentPathVM.Date,
+                    Sections = currentPathVM.SectionsVM,
+                    SeatNumber = 1,
+                    Class = currentPathVM.Class,
+                    Price = 25
+                };
+                ShoppingCartVM? shopping;
+                if (HttpContext.Session.GetObject<ShoppingCartVM>("ShoppingCart") != null)
+                {
+                    shopping = HttpContext.Session.GetObject<ShoppingCartVM>("ShoppingCart");
+                }
+                else
+                {
+                    shopping = new ShoppingCartVM();
+                    shopping.Cart = new List<CartItemVM>();
+                }
+                var lastCartItem = shopping.Cart.LastOrDefault();
+                if (lastCartItem != null)
+                {
+                    item.Id = lastCartItem.Id + 1;
+                }
+                
+                shopping?.Cart?.Add(item);
+                HttpContext.Session.SetObject("ShoppingCart", shopping);
+            }
+            return RedirectToAction("Index", "ShoppingCart");
         }
 
         private bool isMiddleSection(Section section, BookingVM booking)
@@ -149,7 +201,7 @@ namespace TrainBooking.Controllers
             return paths;
         }
 
-        public async Task<IActionResult> Ticket(int? Id, DateOnly departureDate, DateOnly arrivalDate, string selectedClass)
+        /*public async Task<IActionResult> Ticket(int? Id, DateOnly departureDate, DateOnly arrivalDate, string selectedClass)
         {
             if (Id == null)
             {
@@ -183,6 +235,6 @@ namespace TrainBooking.Controllers
             HttpContext.Session.SetObject("ShoppingCart", cart);
 
             return RedirectToAction("Index", "ShoppingCart");
-        }
+        }*/
     }
 }

@@ -47,7 +47,7 @@ builder.Services.AddControllersWithViews()
 builder.Services.AddSession(options =>
 {
     options.Cookie.Name = "be.VIVES.TrainBookingPB";
-    options.IdleTimeout = TimeSpan.FromMinutes(1);
+    options.IdleTimeout = TimeSpan.FromMinutes(60);
 });
 
 // Add Automapper
@@ -60,10 +60,16 @@ builder.Services.AddTransient<IDAO<Station>, StationDAO>();
 builder.Services.AddTransient<IService<Section>, SectionService>();
 builder.Services.AddTransient<IDAO<Section>, SectionDAO>();
 
-var supportedCultures = new[] { "en", "nl", "de" };
+builder.Services.AddTransient<IService<Ticket>, TicketService>();
+builder.Services.AddTransient<IDAO<Ticket>, TicketDAO>();
+
+builder.Services.AddTransient<IService<Booking>, BookingService>();
+builder.Services.AddTransient<IDAO<Booking>, BookingDAO>();
+
 builder.Services.AddTransient<IService<AspNetUser>, UsersService>();
 builder.Services.AddTransient<IDAO<AspNetUser>, UsersDAO>();
 
+var supportedCultures = new[] { "en", "nl", "de" };
 
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {

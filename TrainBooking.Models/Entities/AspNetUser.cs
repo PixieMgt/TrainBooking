@@ -10,6 +10,7 @@ namespace TrainBooking.Models.Entities
             AspNetUserClaims = new HashSet<AspNetUserClaim>();
             AspNetUserLogins = new HashSet<AspNetUserLogin>();
             AspNetUserTokens = new HashSet<AspNetUserToken>();
+            Bookings = new HashSet<Booking>();
             Roles = new HashSet<AspNetRole>();
         }
 
@@ -32,6 +33,7 @@ namespace TrainBooking.Models.Entities
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual ICollection<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual ICollection<AspNetUserToken> AspNetUserTokens { get; set; }
+        public virtual ICollection<Booking> Bookings { get; set; }
 
         public virtual ICollection<AspNetRole> Roles { get; set; }
     }
