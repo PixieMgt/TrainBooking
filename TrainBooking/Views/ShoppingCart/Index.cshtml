@@ -12,14 +12,14 @@
     <form asp-action="Payment">
         <table>
             <tr>
-                <th>@Html.DisplayNameFor(model => model.Cart[0].DepartureDate)</th>
-                @*<th>@Html.DisplayNameFor(model => model.Cart[0].Sections.FirstOrDefault().DepartureStation)</th>
-                <th>@Html.DisplayNameFor(model => model.Cart[0].Sections.FirstOrDefault().DestinationStation)</th>
-                <th>@Html.DisplayNameFor(model => model.Cart[0].Sections.FirstOrDefault().DepartureTime)</th>
-            <th>@Html.DisplayNameFor(model => model.Cart[0].Sections.FirstOrDefault().ArrivalTime)</th>*@
+                <th>Date</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Departure time</th>
+                <th>Arrival time</th>
                 <th>@Html.DisplayNameFor(model => model.Cart[0].Class)</th>
                 <th>@Html.DisplayNameFor(model => model.Cart[0].Price)</th>
-                <th>@Html.DisplayNameFor(model => model.Cart[0].SeatNumber)</th>
+                <th>Amount</th>
                 
             </tr>
             @{
@@ -39,12 +39,11 @@
                         @Html.HiddenFor(m => Model.Cart[i].Sections[j].ArrivalTime)
                         @Html.HiddenFor(m => Model.Cart[i].Sections[j].Train)
                     }
-                    <td><input asp-for="@Model.Cart[i].DepartureDate" class="form-control" /></td>
-                    <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().DepartureStation" class="form-control" /></td>
-                    <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().DestinationStation" class="form-control" /></td>
-                    <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().DepartureTime" class="form-control" /></td>
-                    <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().ArrivalTime" class="form-control" /></td>
-                    
+                    <td><input asp-for="@Model.Cart[i].DepartureDate" class="form-control" readonly /></td>
+                    <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().DepartureStation" class="form-control" readonly /></td>
+                    <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().DestinationStation" class="form-control" readonly /></td>
+                    <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().DepartureTime" class="form-control" readonly /></td>
+                    <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().ArrivalTime" class="form-control" readonly /></td>
                     <td><input asp-for="@Model.Cart[i].Class" readonly="readonly" class="form-control" data-aantal=@i/></td>
                     <td><input asp-for="@Model.Cart[i].Price" readonly="readonly" class="form-control" /></td>
                     <td><input asp-for="@Model.Cart[i].SeatNumber" type="number" min="1" max="100" class="form-control" /></td>

@@ -29,13 +29,8 @@
     <ProjectReference Include="..\TrainBooking.Models\TrainBooking.Models.csproj" />
     <ProjectReference Include="..\TrainBooking.Services\TrainBooking.Services.csproj" />
   </ItemGroup>
-
-<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="Controllers\API\" />
     <Folder Include="Util\Mail\" />
   </ItemGroup>
-
-=======
->>>>>>> bc1abaecbfda79935ed537aec65c45dc506d3c2f
 </Project>

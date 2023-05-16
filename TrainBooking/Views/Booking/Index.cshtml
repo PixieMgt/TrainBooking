@@ -26,6 +26,13 @@
                 </select>
                 <span asp-validation-for="arrivalStation" class="text-danger"></span>
             </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="departureDate" class="control-label"></label>
+                    <input id="Date" type="Date" asp-for="departureDate" class="form-control" />
+                    <span asp-validation-for="departureDate" class="text-danger"></span>
+                </div>
+            </div>
             <div class="form-group">
                 <input type="submit" value="@Localizer["Plan my journey"]" class="btn btn-primary" />
             </div>
@@ -77,5 +84,16 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(() => {
+            $("#Date").datepicker({
+                numberOfMonths: [1, 2],
+                beforeShowDay: $.datepicker.noWeekends,
+                minDate: 0
+            });
+        });
+    </script>
 }
