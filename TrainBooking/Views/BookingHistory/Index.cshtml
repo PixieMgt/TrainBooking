@@ -1,0 +1,32 @@
+﻿@model IEnumerable<TrainBooking.ViewModels.BookingHistoryVM>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@if (Model != null){
+@foreach (var item in Model) {
+        <tr>
+            <td>Tickets: </td>
+            @foreach (var ticket in item.TicketList)
+                {
+                    <td>Yeeha</td>
+                }
+        </tr>
+}
+}
+
+    </tbody>
+</table>
