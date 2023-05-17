@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using TrainBooking.Extensions;
 using TrainBooking.Models.Entities;
+using TrainBooking.Services;
 using TrainBooking.Services.Interfaces;
 using TrainBooking.ViewModels;
 
@@ -21,9 +22,9 @@ namespace TrainBooking.Controllers
 
         private readonly IMapper _mapper;
 
-        private readonly IEmailSender _emailSender;
+        private readonly IEmailSender2 _emailSender;
 
-        public ShoppingCartController(IMapper mappper, IService<Ticket> ticketService, IService<Booking> bookingService, IService<Section> sectionService, IEmailSender emailSender, IService<Station> stationService)
+        public ShoppingCartController(IMapper mappper, IService<Ticket> ticketService, IService<Booking> bookingService, IService<Section> sectionService, IEmailSender2 emailSender, IService<Station> stationService)
 
         {
             _mapper = mappper;
