@@ -121,7 +121,7 @@
     <value>Book a Train</value>
   </data>
   <data name="Introduction Text" xml:space="preserve">
-    <value>This is the introduction</value>
+    <value>Click the button below to get started.</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>

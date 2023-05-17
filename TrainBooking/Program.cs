@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using TrainBooking.Models.Entities;
@@ -9,14 +9,53 @@ using TrainBooking.Services.Interfaces;
 using TrainBooking.Data;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using TrainBooking.Util.Mail;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(MyAllowSpecificOrigins,
+    policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+        policy.WithOrigins("http://localhost:5173")
+              .WithMethods("POST", "DELETE", "GET")
+              .AllowAnyHeader();
+    });
+});
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "My API Trains",
+        Version = "version 1",
+        Description = "An API to perform Train operations",
+        TermsOfService = new Uri("https://example.com/terms"),
+        Contact = new OpenApiContact
+        {
+            Name = "TrainBooking",
+            Email = "trainbookingnoreply@gmail.com",
+            Url = new Uri("https://trainbookingpixiembramvh.azurewebsites.net/"),
+        },
+        License = new OpenApiLicense
+        {
+            Name = "Train API LICX",
+            Url = new Uri("https://example.com/license"),
+        }
+    });
+});
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -90,6 +129,19 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+var swaggerOptions = new TrainBooking.Options.SwaggerOptions();
+builder.Configuration.GetSection(nameof(TrainBooking.Options.SwaggerOptions)).Bind(swaggerOptions);
+// Enable middleware to serve generated Swagger as a JSON endpoint.
+//RouteTemplate legt het path vast waar de JSON‐file wordt aangemaakt
+app.UseSwagger(option => { option.RouteTemplate = swaggerOptions.JsonRoute; });
+//// By default, your Swagger UI loads up under / swagger /.If you want to change this, it's thankfully very straight‐forward.
+////Simply set the RoutePrefix option in your call to app.UseSwaggerUI in Program.cs:
+app.UseSwaggerUI(option =>
+{
+    option.SwaggerEndpoint(swaggerOptions.UiEndpoint, swaggerOptions.Description);
+});
+app.UseSwagger();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
