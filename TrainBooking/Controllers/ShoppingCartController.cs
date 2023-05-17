@@ -91,7 +91,9 @@ namespace TrainBooking.Controllers
                         message += "To: " + ticket.Sections.LastOrDefault().DestinationStation + Environment.NewLine;
                         message += "Departure Time: " + ticket.Sections.FirstOrDefault().DepartureTime + Environment.NewLine;
                         message += "Arrival Time: " + ticket.Sections.LastOrDefault().ArrivalTime + Environment.NewLine;
-                        message += "Class: ";
+                        message += "Class: " + cartItem.Class + Environment.NewLine;
+                        message += "Amount: " + cartItem.Amount + Environment.NewLine;
+                        message += "Subtotal: " + cartItem.Price * cartItem.Amount + Environment.NewLine;
                         message += Environment.NewLine;
                     }
                 }
