@@ -25,6 +25,10 @@ namespace TrainBooking.AutoMapper
             CreateMap<AspNetUser, UserVM>();
             CreateMap<Train, TrainVM>();
             CreateMap<TrainVM, Train>();
+
+            CreateMap<Booking, BookingHistoryVM>().ForMember(dest => dest.TicketList,
+                opt => opt.MapFrom(
+                    src => src.Tickets));
         }
     }
 }
