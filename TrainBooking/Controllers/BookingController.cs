@@ -17,13 +17,15 @@ namespace TrainBooking.Controllers
     {
         private IService<Station> _stationService;
         private IService<Section> _sectionService;
+        private IService<Ticket> _ticketService;
 
         private readonly IMapper _mapper;
-        public BookingController(IMapper mapper, IService<Station> stationService, IService<Section> sectionService)
+        public BookingController(IMapper mapper, IService<Station> stationService, IService<Section> sectionService, IService<Ticket> ticketService)
         {
             _mapper = mapper;
             _stationService = stationService;
             _sectionService = sectionService;
+            _ticketService = ticketService;
         }
         public async Task<IActionResult> Index()
         {
@@ -108,7 +110,6 @@ namespace TrainBooking.Controllers
         [HttpPost]
         public IActionResult Path(TicketVM pathVM)
         {
-            Console.WriteLine(pathVM);
             TicketVM? currentPathVM;
             if (HttpContext.Session.GetObject<List<TicketVM>>("PathList") != null)
             {
