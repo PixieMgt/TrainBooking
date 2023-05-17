@@ -27,7 +27,7 @@
             }
             @for (var i = 0; i < Model.Cart.Count; i++)
             {
-                <tr>
+                <tr class="datarow">
                     @Html.HiddenFor(m => Model.Cart[i].Id)
                     @Html.HiddenFor(m => Model.Cart[i].SeatNumber)
                     @for (var j = 0; j < Model.Cart[i].Sections.Count; j++){
@@ -47,8 +47,8 @@
                     <td><input asp-for="@Model.Cart[i].Sections.LastOrDefault().ArrivalTime" class="form-control" readonly /></td>
                     <td><input asp-for="@Model.Cart[i].Class" readonly="readonly" class="form-control" data-aantal=@i/>
                     </td>
-                    <td><input asp-for="@Model.Cart[i].Price" readonly="readonly" class="form-control" /></td>
-                    <td><input asp-for="@Model.Cart[i].Amount" type="number" min="1" max="100" class="form-control" /></td>
+                    <td><input asp-for="@Model.Cart[i].Price" readonly="readonly" class="form-control price" /></td>
+                    <td><input asp-for="@Model.Cart[i].Amount" type="number" min="1" max="100" class="form-control amount" /></td>
                     <td>
                         @{
                             var subtotal = Model.Cart[i].Price
@@ -67,8 +67,8 @@
             }
             <tr>
 
-                <td id="cart-total">
-                    Total <input id="txtTotal" value="@total"
+                <td>
+                    Total <input id="cart-total" value="@total"
                                   type="number" readonly="readonly" class="form-control" />
                 </td>
             </tr>
@@ -83,4 +83,43 @@
 else
 {
     @Html.Raw("Your shoppingcart is empty at the moment")
+}
+@section Scripts {
+    <script>
+        function calculateSubtotals() {
+            const rows = document.querySelectorAll(".datarow");
+
+            rows.forEach(function (row) {
+                const quantityInput = row.querySelector(".amount");
+                const priceInput = row.querySelector(".price");
+                const subtotalElement = row.querySelector(".subtotal");
+
+                const quantity = parseInt(quantityInput.value);
+                const price = parseInt(priceInput.value);
+                const subtotal = isNaN(quantity) || isNaN(price) ? 0 : quantity * price;
+
+                subtotalElement.value = subtotal;
+            });
+        }
+
+        function calculateTotalAmount() {
+            const subtotals = document.querySelectorAll(".subtotal");
+            let total = 0;
+
+            subtotals.forEach(function (subtotalElement) {
+                const subtotal = parseInt(subtotalElement.value);
+                total += isNaN(subtotal) ? 0 : subtotal;
+            });
+            const totalAmountElement = document.getElementById("cart-total");
+            totalAmountElement.value = total;
+        }
+        const quantityInputs = document.querySelectorAll(".amount");
+        quantityInputs.forEach(function (input) {
+            input.addEventListener("input", function () {
+                calculateSubtotals();
+                calculateTotalAmount();
+            });
+        });
+    </script>
+
 }

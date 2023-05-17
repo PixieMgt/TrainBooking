@@ -96,10 +96,9 @@
             const currentDate = new Date();
 
             if (selectedDate < currentDate) {
-                // Date is in the past, disable the submit button
+                // Verleden
                 submitButton.disabled = true;
             } else {
-                // Date is valid, enable the submit button
                 submitButton.disabled = false;
             }
         });

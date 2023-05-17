@@ -17,12 +17,13 @@ namespace TrainBooking.Controllers
         private IService<Ticket> _ticketService;
         private IService<Booking> _bookingService;
         private IService<Section> _sectionService;
+        private IService<Station> _stationService;
 
         private readonly IMapper _mapper;
 
         private readonly IEmailSender _emailSender;
 
-        public ShoppingCartController(IMapper mappper, IService<Ticket> ticketService, IService<Booking> bookingService, IService<Section> sectionService, IEmailSender emailSender)
+        public ShoppingCartController(IMapper mappper, IService<Ticket> ticketService, IService<Booking> bookingService, IService<Section> sectionService, IEmailSender emailSender, IService<Station> stationService)
 
         {
             _mapper = mappper;
@@ -30,6 +31,7 @@ namespace TrainBooking.Controllers
             _bookingService = bookingService;
             _sectionService = sectionService;
             _emailSender = emailSender;
+            _stationService = stationService;
         }
         public IActionResult Index()
         {
@@ -85,13 +87,13 @@ namespace TrainBooking.Controllers
                             Class = cartItem.Class,
                             Sections = _mapper.Map<ICollection<Section>>(cartItem.Sections)
                         };
-                        var from = await _sectionService.FindById(ticket.Sections.FirstOrDefault().DepartureStationId);
-                        var to = await _sectionService.FindById(ticket.Sections.LastOrDefault().DestinationStationId);
+                        var from = await _stationService.FindById(ticket.Sections.FirstOrDefault().DepartureStationId);
+                        var to = await _stationService.FindById(ticket.Sections.LastOrDefault().DestinationStationId);
                         await _ticketService.Add(ticket);
                         totalPrice += cartItem.Price;
                         message += "Date: " + DateTime.Parse(cartItem.DepartureDate).ToShortDateString() + Environment.NewLine;
-                        message += "From: " + from.DepartureStation.City + Environment.NewLine;
-                        message += "To: " + to.DestinationStation.City + Environment.NewLine;
+                        message += "From: " + from.City + Environment.NewLine;
+                        message += "To: " + to.City + Environment.NewLine;
                         message += "Departure Time: " + ticket.Sections.FirstOrDefault().DepartureTime + Environment.NewLine;
                         message += "Arrival Time: " + ticket.Sections.LastOrDefault().ArrivalTime + Environment.NewLine;
                         message += "Class: " + cartItem.Class + Environment.NewLine;
