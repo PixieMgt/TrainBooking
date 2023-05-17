@@ -32,7 +32,6 @@ namespace TrainBooking.Controllers
             {
                 var bookingList = await _bookingService.GetAll();
                 var userBookingList = bookingList.Where(s => s.UserId.Equals(userID)).ToList();
-                
                 foreach (var booking in userBookingList)
                 {
                     foreach (var ticket in booking.Tickets)
@@ -53,11 +52,12 @@ namespace TrainBooking.Controllers
             return NotFound();
         }
 
-        [HttpPost]
+        /*[HttpPost]
         public async Task<IActionResult> Index(TicketVM? ticketVM)
         {
+            Ticket ticket = _mapper.Map<Ticket>()
             _ticketService.Delete(ticketVM);
-            return Redirect("index");
-        }
+            return Redirect("index");*/
+        //}
     }
 }

@@ -22,12 +22,12 @@ namespace TrainBooking.Controllers
 
         private readonly IEmailSender _emailSender;
 
-        public ShoppingCartController(IMapper mappper, IService<Ticket> ticketService, IService<Booking> bookingService, IService<Section> sectionService, IEmailSender emailSender)
+        public ShoppingCartController(IMapper mappper, IService<Ticket> ticketService, IService<Booking> bookingService, IEmailSender emailSender)
+
         {
             _mapper = mappper;
             _ticketService = ticketService;
             _bookingService = bookingService;
-            _sectionService = sectionService;
             _emailSender = emailSender;
         }
         public IActionResult Index()
@@ -100,6 +100,8 @@ namespace TrainBooking.Controllers
             {
                 Console.WriteLine(ex);
             }
+
+
 
             string? email = User?.FindFirst(ClaimTypes.Email)?.Value;
 
