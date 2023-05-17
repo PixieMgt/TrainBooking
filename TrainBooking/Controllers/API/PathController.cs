@@ -22,9 +22,9 @@ namespace TrainBooking.Controllers.API
             _sectionService = sectionService;
         }
         [HttpGet("{departureStationId}/{destinationStationId}")]
-        public async Task<IEnumerable<PathVM>> Get(int departureStationId, int destinationStationId)
+        public async Task<IEnumerable<TicketVM>> Get(int departureStationId, int destinationStationId)
         {
-            List<PathVM> paths = new List<PathVM>();
+            List<TicketVM> paths = new List<TicketVM>();
             var sectionList = await _sectionService.GetAll();
             var directConnections = sectionList.Where((a) => a.DepartureStation.Id == departureStationId
                                                         && a.DestinationStation.Id == destinationStationId).ToList().OrderBy(s => s.DepartureTime);
@@ -32,7 +32,7 @@ namespace TrainBooking.Controllers.API
             {
                 foreach (var section in directConnections)
                 {
-                    var path = new PathVM();
+                    var path = new TicketVM();
 
                     path.SectionsVM.Add(_mapper.Map<SectionVM>(section));
                     paths.Add(path);
@@ -73,9 +73,9 @@ namespace TrainBooking.Controllers.API
             return false;
         }
 
-        private List<PathVM> makePaths(List<SectionVM> departures, List<SectionVM> middleSections, List<SectionVM> destinations)
+        private List<TicketVM> makePaths(List<SectionVM> departures, List<SectionVM> middleSections, List<SectionVM> destinations)
         {
-            List<PathVM> paths = new List<PathVM>();
+            List<TicketVM> paths = new List<TicketVM>();
             if (middleSections.Count() > 0)
             {
                 foreach (var departure in departures)
@@ -89,7 +89,7 @@ namespace TrainBooking.Controllers.API
                     }
                     if (destination != null)
                     {
-                        var path = new PathVM();
+                        var path = new TicketVM();
                         path.SectionsVM.Add(departure);
                         path.SectionsVM.Add(middleSection);
                         path.SectionsVM.Add(destination);
@@ -104,7 +104,7 @@ namespace TrainBooking.Controllers.API
                     var destination = destinations.FirstOrDefault(s => s.DepartureStation.Equals(departure.DestinationStation) && s.DepartureTime >= departure.ArrivalTime);
                     if (destination != null)
                     {
-                        var path = new PathVM();
+                        var path = new TicketVM();
                         path.SectionsVM.Add(departure);
                         path.SectionsVM.Add(destination);
                         paths.Add(path);

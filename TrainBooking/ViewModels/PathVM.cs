@@ -3,9 +3,9 @@ using TrainBooking.Models.Entities;
 
 namespace TrainBooking.ViewModels
 {
-    public class PathVM
+    public class TicketVM
     {
-        public PathVM()
+        public TicketVM()
         {
             SectionsVM = new List<SectionVM>();
         }
