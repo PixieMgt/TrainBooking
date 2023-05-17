@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <input type="submit" value="@Localizer["Plan my journey"]" class="btn btn-primary" />
+                <input type="submit" value="@Localizer["Plan my journey"]" class="btn btn-primary" id="submitButton" />
             </div>
         </form>
     </div>
@@ -88,12 +88,20 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
     <script>
-        $(() => {
-            $("#Date").datepicker({
-                numberOfMonths: [1, 2],
-                beforeShowDay: $.datepicker.noWeekends,
-                minDate: 0
-            });
+        const dateInput = document.getElementById('Date');
+        const submitButton = document.getElementById('submitButton');
+
+        dateInput.addEventListener('input', function () {
+            const selectedDate = new Date(this.value);
+            const currentDate = new Date();
+
+            if (selectedDate < currentDate) {
+                // Date is in the past, disable the submit button
+                submitButton.disabled = true;
+            } else {
+                // Date is valid, enable the submit button
+                submitButton.disabled = false;
+            }
         });
     </script>
 }
