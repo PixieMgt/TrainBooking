@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using System.Security.Claims;
@@ -19,12 +21,15 @@ namespace TrainBooking.Controllers
 
         private readonly IMapper _mapper;
 
-        public ShoppingCartController(IMapper mappper, IService<Ticket> ticketService, IService<Booking> bookingService, IService<Section> sectionService)
+        private readonly IEmailSender _emailSender;
+
+        public ShoppingCartController(IMapper mappper, IService<Ticket> ticketService, IService<Booking> bookingService, IService<Section> sectionService, IEmailSender emailSender)
         {
             _mapper = mappper;
             _ticketService = ticketService;
             _bookingService = bookingService;
             _sectionService = sectionService;
+            _emailSender = emailSender;
         }
         public IActionResult Index()
         {
@@ -43,6 +48,9 @@ namespace TrainBooking.Controllers
         [HttpPost] 
         public async Task<ActionResult> PaymentAsync(ShoppingCartVM? carts)
         {
+            int totalPrice = 0;
+            string message = "";
+
             string? userID = User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             Booking? booking = new Booking()
             {
@@ -53,7 +61,6 @@ namespace TrainBooking.Controllers
                 await _bookingService.Add(booking);
                 foreach (var cartItem in carts.Cart)
                 {
-                    
                     for (var i = 0; i < cartItem.Amount; i++)
                     {
                         Ticket ticket = new Ticket()
@@ -65,6 +72,14 @@ namespace TrainBooking.Controllers
                             Sections = _mapper.Map<ICollection<Section>>(cartItem.Sections)
                         };
                         await _ticketService.Add(ticket);
+                        totalPrice += cartItem.Price;
+                        message += "Date: " + DateTime.Parse(cartItem.DepartureDate).ToShortDateString() + Environment.NewLine;
+                        message += "From: " + ticket.Sections.FirstOrDefault().DestinationStation + Environment.NewLine;
+                        message += "To: " + ticket.Sections.LastOrDefault().DestinationStation + Environment.NewLine;
+                        message += "Departure Time: " + ticket.Sections.FirstOrDefault().DepartureTime + Environment.NewLine;
+                        message += "Arrival Time: " + ticket.Sections.LastOrDefault().ArrivalTime + Environment.NewLine;
+                        message += "Class: ";
+                        message += Environment.NewLine;
                     }
                 }
             }
@@ -72,6 +87,12 @@ namespace TrainBooking.Controllers
             {
                 Console.WriteLine(ex);
             }
+
+            string? email = User?.FindFirst(ClaimTypes.Email)?.Value;
+
+            message += "Total: $" + totalPrice;
+            _emailSender.SendEmailAsync(email, "Booking Confirmation", message);
+
             return View("confirmation");
         }
 
