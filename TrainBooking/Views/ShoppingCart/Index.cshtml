@@ -27,7 +27,6 @@
             }
             @for (var i = 0; i < Model.Cart.Count; i++)
             {
-
                 <tr>
                     @Html.HiddenFor(m => Model.Cart[i].Id)
                     @Html.HiddenFor(m => Model.Cart[i].SeatNumber)
@@ -46,11 +45,19 @@
                     <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().DestinationStation" class="form-control" readonly /></td>
                     <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().DepartureTime" class="form-control" readonly /></td>
                     <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().ArrivalTime" class="form-control" readonly /></td>
-                    <td><input asp-for="@Model.Cart[i].Class" readonly="readonly" class="form-control" data-aantal=@i/></td>
+                    <td><input asp-for="@Model.Cart[i].Class" readonly="readonly" class="form-control" data-aantal=@i/>
+                    </td>
                     <td><input asp-for="@Model.Cart[i].Price" readonly="readonly" class="form-control" /></td>
                     <td><input asp-for="@Model.Cart[i].Amount" type="number" min="1" max="100" class="form-control" /></td>
-                    <td><input type="number" class="subtotal form-control" value="@Model.Cart[i].Price" readonly /></td>
+                    <td>
+                        @{
+                            var subtotal = Model.Cart[i].Price
+                                    * Model.Cart[i].Amount;
+                            total += subtotal;
 
+                        }
+                        <input type="number" class="subtotal form-control" value="@subtotal" readonly />
+                    </td>
                     <td>
                         <a asp-action="Delete" asp-route-id="@Model.Cart[i].Id">
                             Delete
@@ -61,7 +68,7 @@
             <tr>
 
                 <td id="cart-total">
-                    Total  <input id="txtTotal" value="@total"
+                    Total <input id="txtTotal" value="@total"
                                   type="number" readonly="readonly" class="form-control" />
                 </td>
             </tr>
@@ -72,9 +79,6 @@
             </tr>
         </table>
     </form>
-    <script>
-        
-    </script>
 }
 else
 {

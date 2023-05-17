@@ -120,7 +120,8 @@ namespace TrainBooking.Controllers
                     Sections = currentPathVM.SectionsVM,
                     SeatNumber = 1,
                     Class = currentPathVM.Class,
-                    Price = 25
+                    Price = 25,
+                    Amount = 1
                 };
                 ShoppingCartVM? shopping;
                 if (HttpContext.Session.GetObject<ShoppingCartVM>("ShoppingCart") != null)
