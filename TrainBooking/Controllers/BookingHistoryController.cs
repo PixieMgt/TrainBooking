@@ -32,16 +32,23 @@ namespace TrainBooking.Controllers
             {
                 var bookingList = await _bookingService.GetAll();
                 var userBookingList = bookingList.Where(s => s.UserId.Equals(userID)).ToList();
+                List<double?> prices = new();
                 foreach (var booking in userBookingList)
                 {
+                    double? totalPrice = 0;
                     foreach (var ticket in booking.Tickets)
                     {
+                        totalPrice += ticket.Price;
                         var sectionList = await _sectionService.GetAll();
                         ticket.Sections = sectionList.Where(s => s.Tickets.Any(s => s.Id == ticket.Id)).ToList();
                     }
+                    prices.Add(totalPrice);
                 }
                 var bookingHistory = _mapper.Map<List<BookingHistoryVM>>(userBookingList);
-
+                for (int i = 0; i < bookingHistory.Count; i++)
+                {
+                    bookingHistory[i].TotalPrice = prices[i];
+                }
                 return View(bookingHistory.OrderByDescending(s => s.CreationDate));
             } catch (Exception e)
             {
@@ -52,12 +59,24 @@ namespace TrainBooking.Controllers
             return NotFound();
         }
 
-        /*[HttpPost]
-        public async Task<IActionResult> Index(TicketVM? ticketVM)
+        public async Task<IActionResult> DeleteAsync(int? id)
         {
-            Ticket ticket = _mapper.Map<Ticket>()
-            _ticketService.Delete(ticketVM);
-            return Redirect("index");*/
-        //}
+            if (id == null)
+            {
+                return NotFound();
+            }
+            try
+            {
+                var ticket = await _ticketService.FindById((int)id);
+                await _ticketService.Delete(ticket);
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return NotFound();
+
+        }
     }
 }

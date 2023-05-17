@@ -36,13 +36,24 @@ namespace TrainBooking.Repositories
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                throw;
             }
         }
 
-        public Task Delete(Ticket entity)
+        public async Task Delete(Ticket entity)
         {
-            throw new NotImplementedException();
+            await _dbContext.Entry(entity).Collection(s => s.Sections).LoadAsync();
+
+            entity.Sections.Clear();
+
+            _dbContext.Entry(entity).State = EntityState.Deleted;
+            try
+            {
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         public async Task<Ticket> FindById(int id)

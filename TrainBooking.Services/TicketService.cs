@@ -21,9 +21,9 @@ namespace TrainBooking.Services
             await _ticketDao.Add(entity);
         }
 
-        public Task Delete(Ticket entity)
+        public async Task Delete(Ticket entity)
         {
-            throw new NotImplementedException();
+            await _ticketDao.Delete(entity);
         }
 
         public async Task<Ticket> FindById(int id)

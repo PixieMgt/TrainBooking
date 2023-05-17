@@ -21,12 +21,15 @@
 @if (Model != null){
 @foreach (var item in Model) {
     @if (item.TicketList.Any()){
+          
         <tr>
             <td><b>Tickets:</b> </td>
             <td><b>@item.CreationDate</b></td>
+            <td><b>€@item.TotalPrice</b></td>
         </tr>
         @foreach (var ticket in item.TicketList)
         {
+            
             @if (ticket.SectionsVM.Any()){
                 <tr>
                     <td>@ticket.Date</td>
@@ -36,7 +39,11 @@
                     <td>@ticket.SectionsVM.LastOrDefault().ArrivalTime</td>
                     <td>@ticket.Class</td>
                     @if (((DateTime.Parse(ticket.Date) - DateTime.Now).Days >= 3)){
-                        <td>Cancel</td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@ticket.Id">
+                                Delete
+                            </a>
+                        </td>
                     }
                 </tr>
             }
