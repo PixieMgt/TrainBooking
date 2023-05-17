@@ -16,10 +16,11 @@ namespace TrainBooking.ViewModels
 
         [Display(Name = "Date")]
         [Required(ErrorMessage = "Please enter a departure date")]
-        public DateOnly departureDate { get; set; }
+        [DataType(DataType.Date)]
+        public string departureDate { get; set; }
 
         public List<SelectListItem>? StationList { get; set; }
 
-        public IEnumerable<PathVM> Paths { get; set; }
+        public IEnumerable<TicketVM> Paths { get; set; }
     }
 }

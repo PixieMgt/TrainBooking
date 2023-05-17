@@ -48,12 +48,6 @@
                     <td><input asp-for="@Model.Cart[i].Price" readonly="readonly" class="form-control" /></td>
                     <td><input asp-for="@Model.Cart[i].SeatNumber" type="number" min="1" max="100" class="form-control" /></td>
                     
-                    @*<td>@Model.Cart[i].Sections.FirstOrDefault().DepartureStation</td>
-                    <td>@Model.Cart[i].Sections.LastOrDefault().DestinationStation</td>
-                    <td>@Model.Cart[i].Sections.LastOrDefault().DepartureTime</td>
-                    <td>@Model.Cart[i].Sections.LastOrDefault().ArrivalTime</td>
-                    <td>@Model.Cart[i].Class</td>
-                    <td>@Model.Cart[i].Price</td>*@
                     <td>
                         <a asp-action="Delete" asp-route-id="@Model.Cart[i].Id">
                             Delete

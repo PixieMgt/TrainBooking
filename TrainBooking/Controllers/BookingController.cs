@@ -40,17 +40,17 @@ namespace TrainBooking.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(BookingVM booking)
         {
-            List<PathVM> paths = new List<PathVM>(); 
+            List<TicketVM> paths = new List<TicketVM>(); 
             if (!booking.departureStation.Equals(booking.arrivalStation))
             {
             var sectionList = await _sectionService.GetAll();
             var directConnections = sectionList.Where((a) => a.DepartureStation.Id.ToString().Equals(booking.departureStation)
                                                         && a.DestinationStation.Id.ToString().Equals(booking.arrivalStation)).ToList().OrderBy(s => s.DepartureTime);
-            if (directConnections.Count() > 0) 
+            if (directConnections.Any()) 
             {
                 foreach (var section in directConnections)
                 {
-                    var path = new PathVM();
+                    var path = new TicketVM();
                     
                     path.SectionsVM.Add(_mapper.Map<SectionVM>(section));
                     paths.Add(path);
@@ -65,6 +65,7 @@ namespace TrainBooking.Controllers
             for (var i = 0; i < paths.Count; i++)
             {
                 paths[i].Id = i + 1;
+                paths[i].Date = booking.departureDate;
             }
             HttpContext.Session.SetObject("PathList", paths);
             }
@@ -84,25 +85,25 @@ namespace TrainBooking.Controllers
         
         public IActionResult Path(int id)
         {
-            PathVM? path;
-            if(HttpContext.Session.GetObject<List<PathVM>>("PathList") != null)
+            TicketVM? path;
+            if(HttpContext.Session.GetObject<List<TicketVM>>("PathList") != null)
             {
-                path = HttpContext.Session.GetObject<List<PathVM>>("PathList").FirstOrDefault(s => s.Id == id);
+                path = HttpContext.Session.GetObject<List<TicketVM>>("PathList").FirstOrDefault(s => s.Id == id);
             }
             else
             {
-                path = new PathVM();
+                path = new TicketVM();
             }
             return View(path);
         }
         [HttpPost]
-        public IActionResult Path(PathVM pathVM)
+        public IActionResult Path(TicketVM pathVM)
         {
             Console.WriteLine(pathVM);
-            PathVM? currentPathVM;
-            if (HttpContext.Session.GetObject<List<PathVM>>("PathList") != null)
+            TicketVM? currentPathVM;
+            if (HttpContext.Session.GetObject<List<TicketVM>>("PathList") != null)
             {
-                currentPathVM = HttpContext.Session.GetObject<List<PathVM>>("PathList").FirstOrDefault(s => s.Id == pathVM.Id);
+                currentPathVM = HttpContext.Session.GetObject<List<TicketVM>>("PathList").FirstOrDefault(s => s.Id == pathVM.Id);
             }
             else
             {
@@ -161,9 +162,9 @@ namespace TrainBooking.Controllers
             return false;
         }
 
-        private List<PathVM> makePaths(List<SectionVM> departures, List<SectionVM> middleSections, List<SectionVM> destinations)
+        private List<TicketVM> makePaths(List<SectionVM> departures, List<SectionVM> middleSections, List<SectionVM> destinations)
         {
-            List<PathVM> paths = new List<PathVM>();
+            List<TicketVM> paths = new List<TicketVM>();
             if (middleSections.Count() > 0)
             {
                 foreach (var departure in departures)
@@ -177,7 +178,7 @@ namespace TrainBooking.Controllers
                     }
                     if (destination != null)
                     {
-                        var path = new PathVM();
+                        var path = new TicketVM();
                         path.SectionsVM.Add(departure);
                         path.SectionsVM.Add(middleSection);
                         path.SectionsVM.Add(destination);
@@ -191,7 +192,7 @@ namespace TrainBooking.Controllers
                     var destination = destinations.FirstOrDefault(s => s.DepartureStation.Equals(departure.DestinationStation) && s.DepartureTime >= departure.ArrivalTime);
                     if (destination != null)
                     {
-                        var path = new PathVM();
+                        var path = new TicketVM();
                         path.SectionsVM.Add(departure);
                         path.SectionsVM.Add(destination);
                         paths.Add(path);

@@ -591,3 +591,5 @@ C:\Github\TrainBooking\TrainBooking\obj\Debug\net6.0\de\TrainBooking.resources.d
 C:\Github\TrainBooking\TrainBooking\obj\Debug\net6.0\en\TrainBooking.resources.dll
 C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\bin\Debug\net6.0\SendGrid.dll
 C:\school\Software Development\Semester 2\Full Stack Development\TrainBooking\TrainBooking\TrainBooking\bin\Debug\net6.0\StarkbankEcdsa.dll
+C:\Github\TrainBooking\TrainBooking\bin\Debug\net6.0\SendGrid.dll
+C:\Github\TrainBooking\TrainBooking\bin\Debug\net6.0\StarkbankEcdsa.dll
