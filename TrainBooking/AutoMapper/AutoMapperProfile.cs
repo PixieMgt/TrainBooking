@@ -31,7 +31,10 @@ namespace TrainBooking.AutoMapper
                     src => src.Tickets));
             CreateMap<Ticket, TicketVM>().ForMember(dest => dest.SectionsVM,
                 opt => opt.MapFrom(
-                    src => src.Sections));
+                    src => src.Sections))
+                .ForMember(dest => dest.Date,
+                opt => opt.MapFrom(
+                    src => src.Date.ToShortDateString()));
         }
     }
 }

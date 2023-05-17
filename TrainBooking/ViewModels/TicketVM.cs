@@ -15,5 +15,6 @@ namespace TrainBooking.ViewModels
         public string Date { get; set; }
         public List<SectionVM?> SectionsVM { get; set; }
         public string Class { get; set; }
+        public int SeatNumber { get; set; }
     }
 }
