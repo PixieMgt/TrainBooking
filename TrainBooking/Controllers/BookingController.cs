@@ -49,6 +49,7 @@ namespace TrainBooking.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index(BookingVM booking)
         {
             List<TicketVM> paths = new List<TicketVM>(); 
@@ -108,6 +109,7 @@ namespace TrainBooking.Controllers
             return View(path);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Path(TicketVM pathVM)
         {
             TicketVM? currentPathVM;

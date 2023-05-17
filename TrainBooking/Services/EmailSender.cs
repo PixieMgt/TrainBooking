@@ -36,7 +36,7 @@ namespace TrainBooking.Util.Mail
         public async Task Execute(string apiKey, string subject, string message, string toEmail)
         {
             // GENERATE PDF
-            /*PdfDocument document = new PdfDocument();
+            PdfDocument document = new PdfDocument();
             PdfPage page = document.Pages.Add();
             PdfGraphics g = page.Graphics;
             PdfBrush brush = new PdfSolidBrush(Color.Black);
@@ -47,7 +47,7 @@ namespace TrainBooking.Util.Mail
             MemoryStream stream = new MemoryStream();
             document.Save(stream);
             document.Close(true);
-            stream.Position = 0;*/
+            stream.Position = 0;
 
             // SEND MAIL
             string content = "Thank you for choosing to travel with us. This is a confirmation of the booking you have made with us and confirms the travel details of your transport contract. Please take a moment to check that the details are correct.";

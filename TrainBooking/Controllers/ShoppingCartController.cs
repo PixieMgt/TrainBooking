@@ -22,16 +22,18 @@ namespace TrainBooking.Controllers
 
         private readonly IMapper _mapper;
 
-        private readonly IEmailSender2 _emailSender;
+        private readonly IEmailSender _emailSender1;
+        private readonly IEmailSender2 _emailSender2;
 
-        public ShoppingCartController(IMapper mappper, IService<Ticket> ticketService, IService<Booking> bookingService, IService<Section> sectionService, IEmailSender2 emailSender, IService<Station> stationService)
+        public ShoppingCartController(IMapper mappper, IService<Ticket> ticketService, IService<Booking> bookingService, IService<Section> sectionService, IEmailSender2 emailSender2, IService<Station> stationService, IEmailSender emailSender1)
 
         {
             _mapper = mappper;
             _ticketService = ticketService;
             _bookingService = bookingService;
             _sectionService = sectionService;
-            _emailSender = emailSender;
+            _emailSender1 = emailSender1;
+            _emailSender2 = emailSender2;
             _stationService = stationService;
         }
         public IActionResult Index()
@@ -60,7 +62,8 @@ namespace TrainBooking.Controllers
 
         }
 
-        [HttpPost] 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> PaymentAsync(ShoppingCartVM? carts)
         {
             int totalPrice = 0;
@@ -114,7 +117,16 @@ namespace TrainBooking.Controllers
             string? email = User?.FindFirst(ClaimTypes.Email)?.Value;
 
             message += "Total: $" + totalPrice;
-            _emailSender.SendEmailAsync(email, "Booking Confirmation", message);
+            try
+            {
+                _emailSender2.SendEmailAsync(email, "Booking Confirmation", message); //without pdf
+                _emailSender1.SendEmailAsync(email, "Booking Confirmation", message); //with pdf...
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
 
             HttpContext.Session.SetObject("ShoppingCart", null);
 
