@@ -29,6 +29,9 @@ namespace TrainBooking.AutoMapper
             CreateMap<Booking, BookingHistoryVM>().ForMember(dest => dest.TicketList,
                 opt => opt.MapFrom(
                     src => src.Tickets));
+            CreateMap<Ticket, TicketVM>().ForMember(dest => dest.SectionsVM,
+                opt => opt.MapFrom(
+                    src => src.Sections));
         }
     }
 }

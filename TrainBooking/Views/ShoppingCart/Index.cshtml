@@ -42,9 +42,9 @@
                     }
                     <td><input asp-for="@Model.Cart[i].DepartureDate" class="form-control" readonly /></td>
                     <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().DepartureStation" class="form-control" readonly /></td>
-                    <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().DestinationStation" class="form-control" readonly /></td>
+                    <td><input asp-for="@Model.Cart[i].Sections.LastOrDefault().DestinationStation" class="form-control" readonly /></td>
                     <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().DepartureTime" class="form-control" readonly /></td>
-                    <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().ArrivalTime" class="form-control" readonly /></td>
+                    <td><input asp-for="@Model.Cart[i].Sections.LastOrDefault().ArrivalTime" class="form-control" readonly /></td>
                     <td><input asp-for="@Model.Cart[i].Class" readonly="readonly" class="form-control" data-aantal=@i/>
                     </td>
                     <td><input asp-for="@Model.Cart[i].Price" readonly="readonly" class="form-control" /></td>

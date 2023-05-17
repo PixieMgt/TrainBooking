@@ -37,6 +37,7 @@ namespace TrainBooking.Repositories
                     .Include(s => s.DepartureStation)
                     .Include(s => s.DestinationStation)
                     .Include(s => s.Train)
+                    .Include(s => s.Tickets)
                     .FirstOrDefaultAsync();
             }
             catch (Exception ex)

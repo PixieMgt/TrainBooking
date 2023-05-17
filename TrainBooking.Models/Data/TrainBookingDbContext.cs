@@ -34,6 +34,7 @@ namespace TrainBooking.Models.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
+
                 IConfigurationRoot configuration = new ConfigurationBuilder()
                                       .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                                       .AddJsonFile("appsettings.json")
@@ -192,6 +193,10 @@ namespace TrainBooking.Models.Data
 
             modelBuilder.Entity<Ticket>(entity =>
             {
+                entity.Property(e => e.Class)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Date).HasColumnType("date");
 
                 entity.HasOne(d => d.Booking)

@@ -13,14 +13,16 @@ namespace TrainBooking.Controllers
     {
         private IService<Booking> _bookingService;
         private IService<Ticket> _ticketService;
+        private IService<Section> _sectionService;
 
         private IMapper _mapper;
 
-        public BookingHistoryController (IMapper mapper, IService<Booking> bookingService, IService<Ticket> ticketService)
+        public BookingHistoryController (IMapper mapper, IService<Booking> bookingService, IService<Ticket> ticketService, IService<Section> sectionService)
         {
             _mapper = mapper;
             _bookingService = bookingService;
             _ticketService = ticketService;
+            _sectionService = sectionService;
         }
         public async Task<IActionResult> Index()
         {
@@ -30,7 +32,18 @@ namespace TrainBooking.Controllers
             {
                 var bookingList = await _bookingService.GetAll();
                 var userBookingList = bookingList.Where(s => s.UserId.Equals(userID)).ToList();
+                
+                foreach (var booking in userBookingList)
+                {
+                    foreach (var ticket in booking.Tickets)
+                    {
+                        var sectionList = await _sectionService.GetAll();
+                        ticket.Sections = sectionList.Where(s => s.Tickets.Any(s => s.Id == ticket.Id)).ToList();
+                        Console.WriteLine(ticket);
+                    }
+                }
                 var bookingHistory = _mapper.Map<List<BookingHistoryVM>>(userBookingList);
+
                 return View(bookingHistory);
             } catch (Exception e)
             {
@@ -38,7 +51,7 @@ namespace TrainBooking.Controllers
             }
 
 
-            return View();
+            return NotFound();
         }
     }
 }
