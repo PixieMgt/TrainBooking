@@ -11,6 +11,7 @@ ViewData["Title"] = "Register";
         <h1>@ViewData["Title"]</h1>
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <h2>Create a new account.</h2>
+            <p>We request you use a gmail account to register as confirmation emails could get blocked when using a different email provider.</p>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-floating">

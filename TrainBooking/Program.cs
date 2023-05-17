@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
-using TrainBooking.Models.Data;
 using TrainBooking.Models.Entities;
 using TrainBooking.Repositories;
 using TrainBooking.Repositories.Interfaces;
