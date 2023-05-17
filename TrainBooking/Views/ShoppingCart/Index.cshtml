@@ -30,6 +30,7 @@
 
                 <tr>
                     @Html.HiddenFor(m => Model.Cart[i].Id)
+                    @Html.HiddenFor(m => Model.Cart[i].SeatNumber)
                     @for (var j = 0; j < Model.Cart[i].Sections.Count; j++){
                         @Html.HiddenFor(m => Model.Cart[i].Sections[j].DepartureStation)
                         @Html.HiddenFor(m => Model.Cart[i].Sections[j].DepartureStationId)
@@ -38,6 +39,7 @@
                         @Html.HiddenFor(m => Model.Cart[i].Sections[j].DepartureTime)
                         @Html.HiddenFor(m => Model.Cart[i].Sections[j].ArrivalTime)
                         @Html.HiddenFor(m => Model.Cart[i].Sections[j].Train)
+                        @Html.HiddenFor(m => Model.Cart[i].Sections[j].Id)
                     }
                     <td><input asp-for="@Model.Cart[i].DepartureDate" class="form-control" readonly /></td>
                     <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().DepartureStation" class="form-control" readonly /></td>
@@ -46,7 +48,7 @@
                     <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().ArrivalTime" class="form-control" readonly /></td>
                     <td><input asp-for="@Model.Cart[i].Class" readonly="readonly" class="form-control" data-aantal=@i/></td>
                     <td><input asp-for="@Model.Cart[i].Price" readonly="readonly" class="form-control" /></td>
-                    <td><input asp-for="@Model.Cart[i].SeatNumber" type="number" min="1" max="100" class="form-control" /></td>
+                    <td><input asp-for="@Model.Cart[i].Amount" type="number" min="1" max="100" class="form-control" /></td>
                     
                     <td>
                         <a asp-action="Delete" asp-route-id="@Model.Cart[i].Id">

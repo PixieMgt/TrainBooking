@@ -21,6 +21,11 @@ namespace TrainBooking.Repositories
         public async Task Add(Ticket entity)
         {
             _dbContext.Entry(entity).State = EntityState.Added;
+            foreach (var section in entity.Sections)
+            {
+                _dbContext.Entry(section).State = EntityState.Modified;
+            }
+            
             try
             {
 

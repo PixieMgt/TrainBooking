@@ -49,22 +49,23 @@ namespace TrainBooking.Controllers
             try
             {
                 await _bookingService.Add(booking);
-                var list = new List<Ticket>();
-                foreach (var path in carts.Cart)
+                foreach (var cartItem in carts.Cart)
                 {
 
-                    Ticket ticket = new Ticket()
-                    {
-                        BookingId = booking.Id,
-                        Price = path.Price,
-                        SeatNumber = path.SeatNumber,
-                        Date = DateTime.Parse(path.DepartureDate),
-                        Sections = _mapper.Map<ICollection<Section>>(path.Sections)
-                    };
-                    list.Add(ticket);
                     
+                    for (var i = 0; i < cartItem.Amount; i++)
+                    {
+                        Ticket ticket = new Ticket()
+                        {
+                            BookingId = booking.Id,
+                            Price = cartItem.Price,
+                            SeatNumber = cartItem.SeatNumber,
+                            Date = DateTime.Parse(cartItem.DepartureDate),
+                            Sections = _mapper.Map<ICollection<Section>>(cartItem.Sections)
+                        };
+                        await _ticketService.Add(ticket);
+                    }
                 }
-                Console.WriteLine(list);
             }
             catch (Exception ex)
             {
