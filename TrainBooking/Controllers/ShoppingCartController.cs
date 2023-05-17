@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using System.Security.Claims;
 using TrainBooking.Extensions;
 using TrainBooking.Models.Entities;
@@ -113,6 +112,8 @@ namespace TrainBooking.Controllers
 
             message += "Total: $" + totalPrice;
             _emailSender.SendEmailAsync(email, "Booking Confirmation", message);
+
+            HttpContext.Session.SetObject("ShoppingCart", null);
 
             return Redirect("confirmation");
         }
