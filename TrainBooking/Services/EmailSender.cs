@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Options;
 using SendGrid;
 using SendGrid.Helpers.Mail;
+using System.Net.Http;
+using System.Net.Mail;
 
 namespace TrainBooking.Util.Mail
 {
@@ -32,7 +34,7 @@ namespace TrainBooking.Util.Mail
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("moortgatpixie@gmail.com", "Password Recovery"),
+                From = new EmailAddress("trainbookingnoreply@gmail.com", "No-Reply"),
                 Subject = subject,
                 PlainTextContent = message,
                 HtmlContent = message
@@ -48,4 +50,4 @@ namespace TrainBooking.Util.Mail
                                    : $"Failure Email to {toEmail}");
         }
     }
-}   
+}

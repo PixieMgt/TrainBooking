@@ -20,7 +20,7 @@
                 <th>@Html.DisplayNameFor(model => model.Cart[0].Class)</th>
                 <th>@Html.DisplayNameFor(model => model.Cart[0].Price)</th>
                 <th>Amount</th>
-                
+                <th>Subtotal</th>                
             </tr>
             @{
                 float total = 0;
@@ -46,8 +46,8 @@
                     <td><input asp-for="@Model.Cart[i].Sections.FirstOrDefault().ArrivalTime" class="form-control" readonly /></td>
                     <td><input asp-for="@Model.Cart[i].Class" readonly="readonly" class="form-control" data-aantal=@i/></td>
                     <td><input asp-for="@Model.Cart[i].Price" readonly="readonly" class="form-control" /></td>
-                    <td><input asp-for="@Model.Cart[i].SeatNumber" type="number" min="1" max="100" class="form-control" /></td>
-                    
+                    @*<td><input type="number" class="form-control" value="@Model.Cart[i].Amount" /></td>*@
+                    <td><input type="number" class="subtotal form-control" value="@Model.Cart[i].Price" readonly /></td>
                     <td>
                         <a asp-action="Delete" asp-route-id="@Model.Cart[i].Id">
                             Delete
@@ -56,21 +56,24 @@
                 </tr>
             }
             <tr>
-                <td>
-                    <input type="submit" value="Checkout"
-                       class="btn btn-default" />
-                </td>
-            </tr>
-            <tr>
 
                 <td id="cart-total">
                     Total  <input id="txtTotal" value="@total"
-                                  type="number" readonly="readonly" />
+                                  type="number" readonly="readonly" class="form-control" />
                 </td>
             </tr>
-
+            <tr>
+                <td>
+                    <a asp-action="Checkout">
+                        Checkout
+                    </a>
+                </td>
+            </tr>
         </table>
     </form>
+    <script>
+        
+    </script>
 }
 else
 {
