@@ -20,7 +20,7 @@
           asp-action="SetAppLanguage" asp-route-returnUrl="@responseUrl"
           method="post" class="form-horizontal" role="form">
         <label asp-for="@currentRequestCulture.RequestCulture.UICulture.Name">
-            <img src="./img/language.png" alt="Select a language" style="height: 28px" />
+            Select a language: 
         </label>
         <select name="lang" class="setLang"
                 asp-for="@currentRequestCulture.RequestCulture.UICulture.Name"
