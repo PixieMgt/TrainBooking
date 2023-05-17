@@ -20,11 +20,13 @@ namespace TrainBooking.Repositories
         }
         public async Task Add(Ticket entity)
         {
-            _dbContext.Entry(entity).State = EntityState.Added;
+            List<Section> sections = new List<Section>();
             foreach (var section in entity.Sections)
             {
-                _dbContext.Entry(section).State = EntityState.Modified;
+                sections.Add(_dbContext.Sections.FirstOrDefault(s => s.Id == section.Id));
             }
+            entity.Sections = sections;
+            _dbContext.Entry(entity).State = EntityState.Added;
             
             try
             {

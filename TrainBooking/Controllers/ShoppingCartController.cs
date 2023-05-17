@@ -15,14 +15,16 @@ namespace TrainBooking.Controllers
     {
         private IService<Ticket> _ticketService;
         private IService<Booking> _bookingService;
+        private IService<Section> _sectionService;
 
         private readonly IMapper _mapper;
 
-        public ShoppingCartController(IMapper mappper, IService<Ticket> ticketService, IService<Booking> bookingService)
+        public ShoppingCartController(IMapper mappper, IService<Ticket> ticketService, IService<Booking> bookingService, IService<Section> sectionService)
         {
             _mapper = mappper;
             _ticketService = ticketService;
             _bookingService = bookingService;
+            _sectionService = sectionService;
         }
         public IActionResult Index()
         {
@@ -51,7 +53,6 @@ namespace TrainBooking.Controllers
                 await _bookingService.Add(booking);
                 foreach (var cartItem in carts.Cart)
                 {
-
                     
                     for (var i = 0; i < cartItem.Amount; i++)
                     {
@@ -71,7 +72,12 @@ namespace TrainBooking.Controllers
             {
                 Console.WriteLine(ex);
             }
-            return View("index");
+            return View("confirmation");
+        }
+
+        public IActionResult Confirmation()
+        {
+            return View();
         }
     }
 }
