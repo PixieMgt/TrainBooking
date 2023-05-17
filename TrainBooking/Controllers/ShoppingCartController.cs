@@ -46,7 +46,8 @@ namespace TrainBooking.Controllers
             string? userID = User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             Booking? booking = new Booking()
             {
-                UserId = userID
+                UserId = userID,
+                CreationDate = DateTime.Now
             };
             try
             {

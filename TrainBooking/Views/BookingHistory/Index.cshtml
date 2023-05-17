@@ -18,6 +18,7 @@
     @if (item.TicketList.Any()){
         <tr>
             <td><b>Tickets:</b> </td>
+            <td><b>@item.CreationDate</b></td>
         </tr>
         @foreach (var ticket in item.TicketList)
         {

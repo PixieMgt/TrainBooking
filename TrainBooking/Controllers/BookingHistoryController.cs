@@ -42,9 +42,9 @@ namespace TrainBooking.Controllers
                         Console.WriteLine(ticket);
                     }
                 }
-                var bookingHistory = _mapper.Map<List<BookingHistoryVM>>(userBookingList);
-
-                return View(bookingHistory);
+                var bookingHistory = _mapper.Map<List<BookingHistoryVM>>(userBookingList) ;
+                
+                return View(bookingHistory.OrderByDescending(s => s.CreationDate));
             } catch (Exception e)
             {
                 Console.WriteLine(e.Message);
