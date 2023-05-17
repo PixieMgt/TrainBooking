@@ -6,5 +6,6 @@ namespace TrainBooking.ViewModels
     {
         public List<TicketVM> TicketList { get; set; }
         public DateTime CreationDate { get; set; }
+        public double? TotalPrice { get; set; }
     }
 }

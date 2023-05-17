@@ -39,11 +39,10 @@ namespace TrainBooking.Controllers
                     {
                         var sectionList = await _sectionService.GetAll();
                         ticket.Sections = sectionList.Where(s => s.Tickets.Any(s => s.Id == ticket.Id)).ToList();
-                        Console.WriteLine(ticket);
                     }
                 }
-                var bookingHistory = _mapper.Map<List<BookingHistoryVM>>(userBookingList) ;
-                
+                var bookingHistory = _mapper.Map<List<BookingHistoryVM>>(userBookingList);
+
                 return View(bookingHistory.OrderByDescending(s => s.CreationDate));
             } catch (Exception e)
             {
@@ -52,6 +51,13 @@ namespace TrainBooking.Controllers
 
 
             return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Index(TicketVM? ticketVM)
+        {
+            _ticketService.Delete(ticketVM);
+            return Redirect("index");
         }
     }
 }

@@ -15,16 +15,15 @@ namespace TrainBooking.Controllers
     {
         private IService<Ticket> _ticketService;
         private IService<Booking> _bookingService;
-        private IService<Section> _sectionService;
 
         private readonly IMapper _mapper;
 
-        public ShoppingCartController(IMapper mappper, IService<Ticket> ticketService, IService<Booking> bookingService, IService<Section> sectionService)
+        public ShoppingCartController(IMapper mappper, IService<Ticket> ticketService, IService<Booking> bookingService)
         {
             _mapper = mappper;
             _ticketService = ticketService;
             _bookingService = bookingService;
-            _sectionService = sectionService;
+
         }
         public IActionResult Index()
         {
@@ -34,10 +33,22 @@ namespace TrainBooking.Controllers
 
         public IActionResult Delete(int? Id)
         {
+            if (Id == null)
+            {
+                return NotFound();
+            }
             ShoppingCartVM? cartList = HttpContext.Session.GetObject<ShoppingCartVM>("ShoppingCart");
-            cartList.Cart.Remove(cartList.Cart.FirstOrDefault(r => r.Id == Id));
-            HttpContext.Session.SetObject("ShoppingCart", cartList);
-            return View("Index", cartList);
+            try
+            {
+                cartList.Cart.Remove(cartList.Cart.FirstOrDefault(r => r.Id == Id));
+                HttpContext.Session.SetObject("ShoppingCart", cartList);
+                return View("Index", cartList);
+            } catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return View();
+
         }
 
         [HttpPost] 
@@ -63,6 +74,7 @@ namespace TrainBooking.Controllers
                             Price = cartItem.Price,
                             SeatNumber = cartItem.SeatNumber,
                             Date = DateTime.Parse(cartItem.DepartureDate),
+                            Class = cartItem.Class,
                             Sections = _mapper.Map<ICollection<Section>>(cartItem.Sections)
                         };
                         await _ticketService.Add(ticket);
@@ -73,7 +85,7 @@ namespace TrainBooking.Controllers
             {
                 Console.WriteLine(ex);
             }
-            return View("confirmation");
+            return Redirect("confirmation");
         }
 
         public IActionResult Confirmation()

@@ -27,7 +27,16 @@ namespace TrainBooking.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var stationList = await _stationService.GetAll();
+            IEnumerable<Station> stationList = null;
+            try
+            {
+             stationList = await _stationService.GetAll();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
             var booking = new BookingVM();
             booking.StationList = stationList != null ? stationList.Select(x => new SelectListItem
             {

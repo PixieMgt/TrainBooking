@@ -137,7 +137,7 @@ namespace TrainBooking.Models.Data
 
             modelBuilder.Entity<Booking>(entity =>
             {
-                entity.Property(e => e.CreationDate).HasColumnType("date");
+                entity.Property(e => e.CreationDate).HasColumnType("datetime");
 
                 entity.Property(e => e.UserId).HasMaxLength(450);
 

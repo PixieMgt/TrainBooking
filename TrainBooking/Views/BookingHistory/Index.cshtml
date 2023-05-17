@@ -9,7 +9,12 @@
 <table class="table">
     <thead>
         <tr>
-            <th></th>
+            <th>Date</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+            <th>Class</th>
         </tr>
     </thead>
     <tbody>
@@ -30,7 +35,9 @@
                     <td>@ticket.SectionsVM.LastOrDefault().DepartureTime</td>
                     <td>@ticket.SectionsVM.LastOrDefault().ArrivalTime</td>
                     <td>@ticket.Class</td>
-                    <td>@ticket.SeatNumber</td>
+                    @if (((DateTime.Parse(ticket.Date) - DateTime.Now).Days >= 3)){
+                        <td>Cancel</td>
+                    }
                 </tr>
             }
         }
